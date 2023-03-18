@@ -27,6 +27,12 @@
       padding: 0;
     }
 
+    ul,
+    li {
+      text-decoration: none;
+      list-style: none;
+    }
+
     .main {
       position: relative;
       width: 100vw;
@@ -110,7 +116,7 @@
       margin: 0 auto;
       padding: 1rem;
       width: 900px;
-      min-height: 1200px;
+      min-height: 100vh;
       background-color: rgb(112, 113, 116);
     }
 
@@ -122,37 +128,34 @@
       background-color: var(--color-dark);
     }
 
-    .portfolio_bg {
-      position: relative;
-      display: flex;
-      flex-direction: column;
-      align-items: flex-end;
+    .portfolio {
+      width: 100%;
       padding: 4rem 0 0 4rem;
       width: 100%;
-      height: 100%;
       box-shadow: 0 0 1rem rgba(256, 256, 256, 0.8);
     }
 
-    .portfolio_bg__heading {
+    .profile {
+      position: relative;
       display: flex;
-      width: 100%;
+      justify-content: center;
+    }
+
+    .avatar_container {
+      position: relative;
+      min-width: var(--avatar-container-size);
+      width: var(--avatar-container-size);
       height: var(--avatar-container-size);
     }
 
-    .portfolio_avatar_container {
-      position: relative;
-      width: var(--avatar-container-size);
-      height: 100%;
-    }
-
-    .portfolio_avatar_wrapper {
+    .avatar_wrapper {
       padding: 0 1.6rem 1.6rem 0;
       width: 100%;
       height: 100%;
       border-radius: 0 0 50% 0;
     }
 
-    .portfolio_avatar_bg {
+    .avatar_bg {
       display: flex;
       align-items: center;
       justify-content: center;
@@ -160,65 +163,94 @@
       height: 100%;
       border-radius: 50%;
       background-color: rgb(160, 142, 93);
+      box-shadow: 0.8rem 0 0.8rem rgb(0, 0, 0);
     }
 
-    .portfolio_avatar {
+    .avatar {
       width: 90%;
       height: 90%;
       border-radius: 50%;
+      box-shadow: 0.6rem 0 0.6rem rgb(0, 0, 0);
     }
 
-    .heading_box {
-      width: calc(100% - var(--avatar-container-size));
-      height: 100%;
-      border-radius: 70px 0 0 0;
-    }
-
-    .portfolio_bg_blocks {
-      display: flex;
-      width: 100%;
-      border-radius: 2rem 0 0 2rem;
-    }
-
-    .portfolio_bg__block2 {
+    .nav_block {
       width: 100%;
       height: 8rem;
       border-radius: 6rem 0 0 2rem;
     }
 
-    .portfolio_bg__titles {
+    .nav_list {
+      display: none;
+      align-items: center;
+      justify-content: center;
+      width: 100%;
+      height: 100%;
+    }
+
+    .portfolio_info {
+      position: relative;
+      display: flex;
+      justify-content: center;
+      width: 100%;
+    }
+
+    .sideBar {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      min-width: var(--avatar-container-size);
+      width: var(--avatar-container-size);
+    }
+
+    .sideBar_block {
       display: flex;
       width: 100%;
+      border-radius: 2rem 0 0 2rem;
+    }
+
+    .sideBar_titles_wrapper {
+      position: relative;
+      width: var(--avatar-container-size);
       height: 4rem;
     }
 
-    .titles_wrapper {
+    .sideBar_titles__lightRightSide {
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      width: 50%;
+    }
+
+    .sideBar_titles {
+      position: relative;
       display: flex;
       align-items: center;
       justify-content: space-between;
       padding: 0 0.5rem;
-      width: var(--avatar-container-size);
+      width: 100%;
       height: 100%;
       border-radius: 0 2rem 2rem 0;
     }
 
-    .block_contacts {
+    .sideBar_contacts {
       height: 16rem;
     }
 
-    .block_techSkills {
+    .sideBar_techSkills {
       height: 20rem;
     }
 
-    .block_softSkills {
+    .sideBar_softSkills {
       height: 16rem;
     }
 
-    .block_languages {
+    .sideBar_languages {
       height: 8rem;
     }
 
-    .block_hobbies {
+    .sideBar_hobbies {
       height: 8rem;
       border-radius: 2rem 0 0 0;
     }
@@ -267,9 +299,14 @@
       background-image: url(./hobbies.png);
     }
 
-    .portfolio {
+    .description_container {
+      position: relative;
+      /* width: calc(100% - var(--avatar-container-size)); */
       width: 100%;
-      height: 100%;
+    }
+
+    .top_left_radius {
+      border-radius: 70px 0 0 0;
     }
 
     @media only screen and (max-width: 980px) {
@@ -287,12 +324,7 @@
         --avatar-container-size: 12rem;
       }
 
-      .portfolio_wrapper {
-        width: 100%;
-        height: max-content;
-      }
-
-      .portfolio_bg {
+      .portfolio {
         padding: 1.6rem 0 0 1.6rem;
       }
 
@@ -300,15 +332,26 @@
         padding: 1.6rem;
       }
 
+      .nav_block {
+        height: 6rem;
+        border-radius: 6rem 0 0 0;
+      }
+
+      .nav_list {
+        display: flex;
+      }
+
+      .sideBar {
+        display: none;
+      }
+
       .titles {
         font-size: 1.8rem;
       }
 
-      .title_icon {
-        display: none;
-      }
-
     }
+
+    @media only screen and (max-width: 600px) {}
   </style>
 </head>
 
@@ -321,65 +364,91 @@
       <div class="bg_image middle__right"></div>
       <div class="bg_image bottom__right"></div>
     </div>
+
     <div class="box_container portfolio_container">
       <div class="portfolio_wrapper">
-        <div class="portfolio_bg bg__dark">
-          <div class="portfolio_bg__heading">
-            <div class="portfolio_avatar_container bg__light">
-              <div class="portfolio_avatar_wrapper bg__dark">
-                <div class="portfolio_avatar_bg">
-                  <img class="portfolio_avatar" src="./avatar_200.png" alt="Avatar">
+        <div class="portfolio bg__dark">
+
+          <div class="profile">
+
+            <div class="avatar_container bg__light">
+              <div class="avatar_wrapper bg__dark">
+                <div class="avatar_bg">
+                  <img class="avatar" src="./avatar_200.png" alt="Avatar">
                 </div>
               </div>
             </div>
-            <div class="heading_box bg__light"></div>
+
+            <div class="description_container top_left_radius bg__light">
+              <section class="description">
+                Oleksandr Krasnoshchokov
+              </section>
+            </div>
+
           </div>
-          <div class="portfolio_bg__block2 bg__light"></div>
-          <div class="portfolio_bg__titles bg__light">
-            <div class="titles_wrapper bg__dark">
-              <h2 class="titles text__light">Contacts</h2>
-              <div class="title_icon title_icon__contacts"></div>
+
+          <nav class="nav_block bg__light">
+            <ul class="nav_list">
+              <li>Description</li>
+              <li>Contents</li>
+            </ul>
+          </nav>
+
+          <div class="portfolio_info">
+            <aside class="sideBar">
+
+              <div class="sideBar_titles_wrapper bg__dark">
+                <div class="sideBar_titles__lightRightSide bg__light"></div>
+                <div class="sideBar_titles bg__dark">
+                  <h2 class="titles text__light">Contacts</h2>
+                  <div class="title_icon title_icon__contacts"></div>
+                </div>
+              </div>
+              <div class="sideBar_block sideBar_contacts bg__light"></div>
+
+              <div class="sideBar_titles_wrapper bg__dark">
+                <div class="sideBar_titles__lightRightSide bg__light"></div>
+                <div class="sideBar_titles bg__dark">
+                  <h2 class="titles text__light">Tech skills</h2>
+                  <div class="title_icon title_icon__techSkills"></div>
+                </div>
+              </div>
+              <div class="sideBar_block sideBar_techSkills bg__light"></div>
+
+              <div class="sideBar_titles_wrapper bg__dark">
+                <div class="sideBar_titles__lightRightSide bg__light"></div>
+                <div class="sideBar_titles bg__dark">
+                  <h2 class="titles text__light">Soft skills</h2>
+                  <div class="title_icon title_icon__softSkills"></div>
+                </div>
+              </div>
+              <div class="sideBar_block sideBar_softSkills bg__light"></div>
+
+              <div class="sideBar_titles_wrapper bg__dark">
+                <div class="sideBar_titles__lightRightSide bg__light"></div>
+                <div class="sideBar_titles bg__dark">
+                  <h2 class="titles text__light">Languages</h2>
+                  <div class="title_icon title_icon__languages"></div>
+                </div>
+              </div>
+              <div class="sideBar_block sideBar_languages bg__light"></div>
+
+              <div class="sideBar_titles_wrapper bg__dark">
+                <div class="sideBar_titles__lightRightSide bg__light"></div>
+                <div class="sideBar_titles bg__dark">
+                  <h2 class="titles text__light">Hobbies</h2>
+                  <div class="title_icon title_icon__hobbies"></div>
+                </div>
+              </div>
+              <div class="sideBar_block sideBar_hobbies bg__light"></div>
+
+            </aside>
+            <div class="description_container bg__light">
+              <section class="description">
+                Description
+              </section>
             </div>
           </div>
-          <div class="portfolio_bg_blocks block_contacts bg__light"></div>
-          <div class="portfolio_bg__titles bg__light">
-            <div class="titles_wrapper bg__dark">
-              <h2 class="titles text__light">Tech skills</h2>
-              <div class="title_icon title_icon__techSkills"></div>
-            </div>
-          </div>
-          <div class="portfolio_bg_blocks block_techSkills bg__light"></div>
-          <div class="portfolio_bg__titles bg__light">
-            <div class="titles_wrapper bg__dark">
-              <h2 class="titles text__light">Soft skills</h2>
-              <div class="title_icon title_icon__softSkills"></div>
-            </div>
-          </div>
-          <div class="portfolio_bg_blocks block_softSkills bg__light"></div>
-          <div class="portfolio_bg__titles bg__light">
-            <div class="titles_wrapper bg__dark">
-              <h2 class="titles text__light">Languages</h2>
-              <div class="title_icon title_icon__languages"></div>
-            </div>
-          </div>
-          <div class="portfolio_bg_blocks block_languages bg__light"></div>
-          <div class="portfolio_bg__titles bg__light">
-            <div class="titles_wrapper bg__dark">
-              <h2 class="titles text__light">Hobbies</h2>
-              <div class="title_icon title_icon__hobbies"></div>
-            </div>
-          </div>
-          <div class="portfolio_bg_blocks block_hobbies bg__light"></div>
-          <!-- <section class="portfolio">
-            <h1>Portfolio</h1>
-            <p>
-              Lorem ipsum dolor sit amet consectetur, adipisicing elit. Tempora veniam minus sed, dolor ducimus
-              molestiae
-              distinctio adipisci enim unde voluptatem iure nostrum reprehenderit, accusantium fuga hic repellendus
-              praesentium
-              voluptatum iusto.
-            </p>
-          </section> -->
         </div>
       </div>
     </div>

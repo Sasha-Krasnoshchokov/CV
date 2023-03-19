@@ -15,7 +15,6 @@
       font-weight: 400;
 
       --avatar-container-size: 20rem;
-      --avatar-container-size__small: 10rem;
       --color-light: rgb(232, 232, 234);
       --color-dark: rgb(69, 69, 71);
 
@@ -139,6 +138,7 @@
       position: relative;
       display: flex;
       justify-content: center;
+      overflow: hidden;
     }
 
     .avatar_container {
@@ -301,9 +301,59 @@
 
     .description_container {
       position: relative;
-      /* width: calc(100% - var(--avatar-container-size)); */
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
       width: 100%;
     }
+
+    .main_title {
+      position: relative;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      padding: 0 1.2rem 1% 1.2rem;
+      width: min-content;
+      font-size: 4.4rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      line-height: 5rem;
+      letter-spacing: 0.4rem;
+      border-bottom: 0.4rem solid #000;
+    }
+
+    .main_title_decorate {
+      color: rgb(160, 142, 93);
+    }
+
+    .black_circle {
+      position: absolute;
+      bottom: -0.8rem;
+      width: 1.2rem;
+      height: 1.2rem;
+      border-radius: 50%;
+      background-color: #000;
+    }
+
+    .black_circle__left {
+      left: 0;
+    }
+
+    .black_circle__right {
+      right: 0;
+    }
+
+    .jobPosition_title {
+      width: 100%;
+      font-size: 2.6rem;
+      font-weight: 700;
+      line-height: 5rem;
+      text-align: center;
+      letter-spacing: 0.2rem;
+    }
+
+    .description {}
 
     .top_left_radius {
       border-radius: 70px 0 0 0;
@@ -317,6 +367,26 @@
       .portfolio_bg {
         padding: 2.4rem 0 0 2.4rem;
       }
+
+      .main_title {
+        font-size: 3.2rem;
+        line-height: 4rem;
+        letter-spacing: 0.2rem;
+        border-bottom: 0.3rem solid #000;
+      }
+
+      .black_circle {
+        bottom: -0.5rem;
+        width: 0.8rem;
+        height: 0.8rem;
+      }
+
+      .jobPosition_title {
+        font-size: 2.2rem;
+        font-weight: 700;
+        line-height: 5rem;
+        letter-spacing: 0.2rem;
+      }
     }
 
     @media only screen and (max-width: 750px) {
@@ -324,12 +394,23 @@
         --avatar-container-size: 12rem;
       }
 
+      .portfolio_container {
+        padding: 1.6rem;
+      }
+
       .portfolio {
         padding: 1.6rem 0 0 1.6rem;
       }
 
-      .portfolio_container {
-        padding: 1.6rem;
+      .jobPosition_title {
+        font-size: 2rem;
+        font-weight: 700;
+        line-height: 3.2rem;
+        letter-spacing: 0.2rem;
+      }
+
+      .top_left_radius {
+        border-radius: 40px 0 0 0;
       }
 
       .nav_block {
@@ -351,7 +432,49 @@
 
     }
 
-    @media only screen and (max-width: 600px) {}
+    @media only screen and (max-width: 600px) {
+      .main_title {
+        font-size: 3rem;
+      }
+    }
+
+    @media only screen and (max-width: 544px) {
+      .main_title {
+        font-size: 1.8rem;
+        line-height: 3rem;
+        font-weight: 700;
+        border-bottom: 0.2rem solid #000;
+      }
+
+      .black_circle {
+        bottom: -0.4rem;
+        width: 0.6rem;
+        height: 0.6rem;
+      }
+
+      .jobPosition_title {
+        font-size: 1.4rem;
+        font-weight: 600;
+        line-height: 3rem;
+        letter-spacing: 0;
+      }
+    }
+
+    @media only screen and (max-width: 440px) {
+      .main_title {
+        font-size: 1.2rem;
+        line-height: 2rem;
+        font-weight: 700;
+        padding: 0 0.8rem 1% 0.8rem;
+      }
+
+      .jobPosition_title {
+        font-size: 1rem;
+        font-weight: 400;
+        line-height: 3rem;
+        letter-spacing: 0;
+      }
+    }
   </style>
 </head>
 
@@ -380,9 +503,13 @@
             </div>
 
             <div class="description_container top_left_radius bg__light">
-              <section class="description">
-                Oleksandr Krasnoshchokov
-              </section>
+              <h2 class="main_title">
+                <span class="main_title_decorate">Oleksandr</span>
+                Krasnoshchokov
+                <div class="black_circle black_circle__left"></div>
+                <div class="black_circle black_circle__right"></div>
+              </h2>
+              <h1 class="jobPosition_title">React Frontend Developer</h1>
             </div>
 
           </div>

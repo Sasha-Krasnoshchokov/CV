@@ -26,10 +26,15 @@
       padding: 0;
     }
 
+    a,
     ul,
     li {
-      text-decoration: none;
       list-style: none;
+      text-decoration: none;
+    }
+
+    a {
+      color: inherit;
     }
 
     .main {
@@ -57,12 +62,6 @@
       background-repeat: no-repeat;
       background-position: center;
       background-size: cover;
-    }
-
-    @media only screen and (max-width: 544px) {
-      .bg_image {
-        width: 100%;
-      }
     }
 
     .top__left {
@@ -128,9 +127,9 @@
     }
 
     .portfolio {
-      width: 100%;
       padding: 4rem 0 0 4rem;
       width: 100%;
+      min-height: 100vh;
       box-shadow: 0 0 1rem rgba(256, 256, 256, 0.8);
     }
 
@@ -138,7 +137,6 @@
       position: relative;
       display: flex;
       justify-content: center;
-      overflow: hidden;
     }
 
     .avatar_container {
@@ -192,6 +190,7 @@
       display: flex;
       justify-content: center;
       width: 100%;
+      min-height: 100vh;
     }
 
     .sideBar {
@@ -205,6 +204,7 @@
 
     .sideBar_block {
       display: flex;
+      padding: 0.8rem;
       width: 100%;
       border-radius: 2rem 0 0 2rem;
     }
@@ -228,6 +228,7 @@
       display: flex;
       align-items: center;
       justify-content: space-between;
+      gap: 1.2rem;
       padding: 0 0.5rem;
       width: 100%;
       height: 100%;
@@ -270,33 +271,125 @@
       color: var(--color-dark);
     }
 
-    .title_icon {
-      width: 3rem;
-      height: 3rem;
+    .icon_bg {
       border-radius: 50%;
       background-repeat: no-repeat;
       background-position: center;
       background-size: cover;
     }
 
-    .title_icon__contacts {
+    .large_icon {
+      min-width: 3rem;
+      min-height: 3rem;
+    }
+
+    .small_icon {
+      min-width: 2rem;
+      min-height: 2rem;
+    }
+
+    .icon_bg__contacts {
       background-image: url(./contacts.png);
     }
 
-    .title_icon__techSkills {
+    .icon_bg__techSkills {
       background-image: url(./techSkills.png);
     }
 
-    .title_icon__softSkills {
+    .icon_bg__softSkills {
       background-image: url(./softSkills.png);
     }
 
-    .title_icon__languages {
+    .icon_bg__languages {
       background-image: url(./languages.png);
     }
 
-    .title_icon__hobbies {
+    .icon_bg__hobbies {
       background-image: url(./hobbies.png);
+    }
+
+    .icon_bg__phone {
+      background-image: url(./phone.png);
+    }
+
+    .icon_bg__email {
+      background-image: url(./email.png);
+    }
+
+    .icon_bg__location {
+      background-image: url(./location.png);
+    }
+
+    .icon_bg__socials {
+      background-image: url(./socials.png);
+    }
+
+    .icon_bg__react {
+      background-image: url(./react.png);
+    }
+
+    .icon_bg__next {
+      background-image: url(./nextjs.png);
+    }
+
+    .icon_bg__redux {
+      background-image: url(./redux.png);
+    }
+
+    .icon_bg__javascript {
+      background-image: url(./javascript.png);
+    }
+
+    .icon_bg__typescript {
+      background-image: url(./typescript.png);
+    }
+
+    .icon_bg__html5 {
+      background-image: url(./html5.png);
+    }
+
+    .icon_bg__scss {
+      background-image: url(./scss.png);
+    }
+
+    .icon_bg__restApi {
+      background-image: url(./restApi.png);
+    }
+
+    .icon_bg__mui {
+      background-image: url(./mui.png);
+    }
+
+    .icon_bg__storybook {
+      background-image: url(./storybook.png);
+    }
+
+    .icon_bg__adm {
+      background-image: url(./adm.png);
+    }
+
+    .icon_bg__bem {
+      background-image: url(./bem.png);
+    }
+
+    .icon_bg__git {
+      background-image: url(./git.png);
+    }
+
+    .icon_bg__npm {
+      background-image: url(./npm.png);
+    }
+
+    .icon_bg__yarn {
+      background-image: url(./yarn.png);
+    }
+
+    .icon_bg__figma {
+      background-image: url(./figma.png);
+    }
+
+    .icon_bg__jira {
+      background-image: url(./jira.png);
     }
 
     .description_container {
@@ -353,7 +446,61 @@
       letter-spacing: 0.2rem;
     }
 
-    .description {}
+    .job_link:hover {
+      border-bottom: 0.2rem solid var(--color-dark);
+    }
+
+    .lists {
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      gap: 0.6rem;
+      width: 100%;
+      height: 100%;
+    }
+
+    .lists_item {
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 0.8rem;
+      width: 100%;
+      height: max-content;
+    }
+
+    .lists_item_text {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 100%;
+      text-align: center;
+      border-bottom: 0.1rem solid var(--color-light);
+    }
+
+    .lists_item_text__sm {
+      font-size: 1rem;
+      line-height: 1.2rem;
+      word-break: break-all;
+    }
+
+    .lists_item_text__md {
+      font-size: 1.4rem;
+      line-height: 1.4rem;
+      word-break: break-all;
+    }
+
+    .lists_item_link:hover {
+      border-bottom: 0.1rem solid var(--color-dark);
+    }
+
+    .description {
+      position: absolute;
+      top: -10rem;
+      width: 100%;
+      height: calc(100% + 9rem);
+      background-color: red;
+    }
 
     .top_left_radius {
       border-radius: 70px 0 0 0;
@@ -422,6 +569,13 @@
         display: flex;
       }
 
+      .description {
+        position: relative;
+        top: 0;
+        width: 100%;
+        height: 100%;
+      }
+
       .sideBar {
         display: none;
       }
@@ -439,6 +593,10 @@
     }
 
     @media only screen and (max-width: 544px) {
+      .bg_image {
+        width: 100%;
+      }
+
       .main_title {
         font-size: 1.8rem;
         line-height: 3rem;
@@ -461,6 +619,10 @@
     }
 
     @media only screen and (max-width: 440px) {
+      .portfolio_container {
+        padding: 0.8rem;
+      }
+
       .main_title {
         font-size: 1.2rem;
         line-height: 2rem;
@@ -473,6 +635,12 @@
         font-weight: 400;
         line-height: 3rem;
         letter-spacing: 0;
+      }
+    }
+
+    @media only screen and (max-width: 360px) {
+      .profile {
+        overflow: hidden;
       }
     }
   </style>
@@ -497,7 +665,7 @@
             <div class="avatar_container bg__light">
               <div class="avatar_wrapper bg__dark">
                 <div class="avatar_bg">
-                  <img class="avatar" src="./avatar_200.png" alt="Avatar">
+                  <img class="avatar" src="./avatar.png" alt="Avatar">
                 </div>
               </div>
             </div>
@@ -509,7 +677,15 @@
                 <div class="black_circle black_circle__left"></div>
                 <div class="black_circle black_circle__right"></div>
               </h2>
-              <h1 class="jobPosition_title">React Frontend Developer</h1>
+              <h1 class="jobPosition_title">
+                <a href="https://react.dev/" target="_blank" class="job_link text__dark" rel="noopener noreferrer">
+                  React
+                </a>
+                <a href="https://en.wikipedia.org/wiki/Front-end_web_development" target="_blank"
+                  class="job_link text__dark" rel="noopener noreferrer">
+                  Front-end Developer
+                </a>
+              </h1>
             </div>
 
           </div>
@@ -528,25 +704,238 @@
                 <div class="sideBar_titles__lightRightSide bg__light"></div>
                 <div class="sideBar_titles bg__dark">
                   <h2 class="titles text__light">Contacts</h2>
-                  <div class="title_icon title_icon__contacts"></div>
+                  <div class="icon_bg large_icon icon_bg__contacts"></div>
                 </div>
               </div>
-              <div class="sideBar_block sideBar_contacts bg__light"></div>
+              <div class="sideBar_block sideBar_contacts bg__light">
+                <ul class="lists">
+
+                  <li class="sideBar_titles">
+                    <div class="icon_bg large_icon icon_bg__phone"></div>
+                    <a href="tel:+38(066)6715180" target="_blank"
+                      class="lists_item_text lists_item_text__md lists_item_link text__dark" rel="noopener noreferrer">
+                      +38 (066) 671-51-80
+                    </a>
+                  </li>
+
+                  <li class="sideBar_titles">
+                    <div class="icon_bg large_icon icon_bg__email"></div>
+                    <a href="mailto:krasnoshchokovoleksandr@gmail.com"
+                      class="lists_item_text__sm lists_item_link text__dark">
+                      krasnoshchokovoleksandr@gmail.com
+                    </a>
+                  </li>
+
+                  <li class="sideBar_titles">
+                    <div class="icon_bg large_icon icon_bg__location"></div>
+                    <a href="https://goo.gl/maps/bGuUh7grEqxu5jSo8" target="_blank"
+                      class="lists_item_text lists_item_text__md lists_item_link text__dark" rel="noopener noreferrer">
+                      Lutsk, Ukraine
+                    </a>
+                  </li>
+
+                  <li class="sideBar_titles">
+                    <div class="icon_bg large_icon icon_bg__socials"></div>
+                    <ul class="sideBar_titles">
+                      <li>
+                        <a href="https://github.com/Sasha-Krasnoshchokov" target="_blank"
+                          class="lists_item_text lists_item_text__md lists_item_link text__dark"
+                          rel="noopener noreferrer">
+                          GitHub
+                        </a>
+                      </li>
+                      <li>
+                        <a href="https://www.linkedin.com/in/oleksandr-krasnoshchokov-8a448315b/" target="_blank"
+                          class="lists_item_text lists_item_text__md lists_item_link   text__dark"
+                          rel="noopener noreferrer">
+                          LinkedIn
+                        </a>
+                      </li>
+                    </ul>
+                  </li>
+
+                </ul>
+              </div>
 
               <div class="sideBar_titles_wrapper bg__dark">
                 <div class="sideBar_titles__lightRightSide bg__light"></div>
                 <div class="sideBar_titles bg__dark">
                   <h2 class="titles text__light">Tech skills</h2>
-                  <div class="title_icon title_icon__techSkills"></div>
+                  <div class="icon_bg large_icon icon_bg__techSkills"></div>
                 </div>
               </div>
-              <div class="sideBar_block sideBar_techSkills bg__light"></div>
+              <div class="sideBar_block sideBar_techSkills bg__light">
+                <ul class="lists">
+
+                  <li class="lists_item">
+                    <ul class="sideBar_titles">
+                      <li class="lists_item">
+                        <a href="https://en.wikipedia.org/wiki/HTML" target="_blank" class="lists_item"
+                          rel="noopener noreferrer">
+                          <div class="icon_bg small_icon icon_bg__html5"></div>
+                          <span class="lists_item_text lists_item_text__md lists_item_link text__dark">
+                            HTML5
+                          </span>
+                        </a>
+                      </li>
+                      <li class="lists_item">
+                        <a href="https://sass-lang.com/" target="_blank" class="lists_item" rel="noopener noreferrer">
+                          <div class="icon_bg small_icon icon_bg__scss"></div>
+                          <span class="lists_item_text lists_item_text__md lists_item_link text__dark">
+                            SASS
+                          </span>
+                        </a>
+                      </li>
+                    </ul>
+                  </li>
+
+                  <li class="lists_item">
+                    <ul class="sideBar_titles">
+                      <li class="lists_item">
+                        <a href="https://react.dev/" target="_blank" class="lists_item" rel="noopener noreferrer">
+                          <div class="icon_bg small_icon icon_bg__react"></div>
+                          <span class="lists_item_text lists_item_text__md lists_item_link text__dark">
+                            React
+                          </span>
+                        </a>
+                      </li>
+                      <li class="lists_item">
+                        <a href="https://redux.js.org/" target="_blank" class="lists_item" rel="noopener noreferrer">
+                          <div class="icon_bg small_icon icon_bg__redux"></div>
+                          <span class="lists_item_text lists_item_text__md lists_item_link text__dark">
+                            Redux
+                          </span>
+                        </a>
+                      </li>
+                    </ul>
+                  </li>
+
+                  <li class="lists_item">
+                    <ul class="sideBar_titles">
+                      <li class="lists_item">
+                        <a href="https://nextjs.org/" target="_blank" class="lists_item" rel="noopener noreferrer">
+                          <div class="icon_bg small_icon icon_bg__next"></div>
+                          <span class="lists_item_text lists_item_text__md lists_item_link text__dark">
+                            NextJS
+                          </span>
+                        </a>
+                      </li>
+                      <li class="lists_item">
+                        <a href="https://en.wikipedia.org/wiki/Representational_state_transfer" target="_blank"
+                          class="lists_item" rel="noopener noreferrer">
+                          <div class="icon_bg small_icon icon_bg__restApi"></div>
+                          <span class="lists_item_text lists_item_text__sm lists_item_link text__dark">
+                            REST API
+                          </span>
+                        </a>
+                      </li>
+                    </ul>
+                  </li>
+
+                  <li class="lists_item">
+                    <ul class="sideBar_titles">
+                      <li class="lists_item">
+                        <a href="https://mui.com/" target="_blank" class="lists_item" rel="noopener noreferrer">
+                          <div class="icon_bg small_icon icon_bg__mui"></div>
+                          <span class="lists_item_text lists_item_text__sm lists_item_link text__dark">
+                            Material UI
+                          </span>
+                        </a>
+                      </li>
+                      <li class="lists_item">
+                        <a href="https://storybook.js.org/" target="_blank" class="lists_item"
+                          rel="noopener noreferrer">
+                          <div class="icon_bg small_icon icon_bg__storybook"></div>
+                          <span class="lists_item_text lists_item_text__sm lists_item_link text__dark">
+                            Storybook
+                          </span>
+                        </a>
+                      </li>
+                    </ul>
+                  </li>
+
+                  <li class="lists_item">
+                    <ul class="sideBar_titles">
+                      <li class="lists_item">
+                        <a href="https://www.figma.com/organization/" target="_blank" class="lists_item"
+                          rel="noopener noreferrer">
+                          <div class="icon_bg small_icon icon_bg__figma"></div>
+                          <span class="lists_item_text lists_item_text__md lists_item_link text__dark">
+                            Figma
+                          </span>
+                        </a>
+                      </li>
+                      <li class="lists_item">
+                        <a href="https://www.atlassian.com/software/jira" target="_blank" class="lists_item"
+                          rel="noopener noreferrer">
+                          <div class="icon_bg small_icon icon_bg__jira"></div>
+                          <span class="lists_item_text lists_item_text__md lists_item_link text__dark">
+                            Jira
+                          </span>
+                        </a>
+                      </li>
+                    </ul>
+                  </li>
+
+                  <li class="lists_item">
+                    <ul class="sideBar_titles">
+                      <li class="lists_item">
+                        <a href="https://atomicdesign.bradfrost.com/chapter-2/" target="_blank" class="lists_item"
+                          rel="noopener noreferrer">
+                          <div class="icon_bg small_icon icon_bg__adm"></div>
+                          <span class="lists_item_text lists_item_text__sm lists_item_link text__dark">
+                            Atomic DM
+                          </span>
+                        </a>
+                      </li>
+                      <li class="lists_item">
+                        <a href="https://en.bem.info/" target="_blank" class="lists_item" rel="noopener noreferrer">
+                          <div class="icon_bg small_icon icon_bg__bem"></div>
+                          <span class="lists_item_text lists_item_text__md lists_item_link text__dark">
+                            BEM
+                          </span>
+                        </a>
+                      </li>
+                    </ul>
+                  </li>
+
+                  <li class="lists_item">
+                    <ul class="sideBar_titles">
+                      <li class="lists_item">
+                        <a href="https://git-scm.com/" target="_blank" class="lists_item" rel="noopener noreferrer">
+                          <div class="icon_bg small_icon icon_bg__git"></div>
+                          <span class="lists_item_text lists_item_text__sm lists_item_link text__dark">
+                            Git
+                          </span>
+                        </a>
+                      </li>
+                      <li class="lists_item">
+                        <a href="https://www.npmjs.com/" target="_blank" class="lists_item" rel="noopener noreferrer">
+                          <div class="icon_bg small_icon icon_bg__npm"></div>
+                          <span class="lists_item_text lists_item_text__sm lists_item_link text__dark">
+                            npm
+                          </span>
+                        </a>
+                      </li>
+                      <li class="lists_item">
+                        <a href="https://yarnpkg.com/" target="_blank" class="lists_item" rel="noopener noreferrer">
+                          <div class="icon_bg small_icon icon_bg__yarn"></div>
+                          <span class="lists_item_text lists_item_text__sm lists_item_link text__dark">
+                            Yarn
+                          </span>
+                        </a>
+                      </li>
+                    </ul>
+                  </li>
+
+                </ul>
+              </div>
 
               <div class="sideBar_titles_wrapper bg__dark">
                 <div class="sideBar_titles__lightRightSide bg__light"></div>
                 <div class="sideBar_titles bg__dark">
                   <h2 class="titles text__light">Soft skills</h2>
-                  <div class="title_icon title_icon__softSkills"></div>
+                  <div class="icon_bg large_icon icon_bg__softSkills"></div>
                 </div>
               </div>
               <div class="sideBar_block sideBar_softSkills bg__light"></div>
@@ -555,7 +944,7 @@
                 <div class="sideBar_titles__lightRightSide bg__light"></div>
                 <div class="sideBar_titles bg__dark">
                   <h2 class="titles text__light">Languages</h2>
-                  <div class="title_icon title_icon__languages"></div>
+                  <div class="icon_bg large_icon icon_bg__languages"></div>
                 </div>
               </div>
               <div class="sideBar_block sideBar_languages bg__light"></div>
@@ -564,7 +953,7 @@
                 <div class="sideBar_titles__lightRightSide bg__light"></div>
                 <div class="sideBar_titles bg__dark">
                   <h2 class="titles text__light">Hobbies</h2>
-                  <div class="title_icon title_icon__hobbies"></div>
+                  <div class="icon_bg large_icon icon_bg__hobbies"></div>
                 </div>
               </div>
               <div class="sideBar_block sideBar_hobbies bg__light"></div>

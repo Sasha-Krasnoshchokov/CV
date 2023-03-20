@@ -31,10 +31,17 @@
     li {
       list-style: none;
       text-decoration: none;
+      color: inherit;
     }
 
-    a {
-      color: inherit;
+    button {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border: none;
+      background-color: inherit;
+      outline: none;
+      cursor: pointer;
     }
 
     .main {
@@ -181,6 +188,7 @@
       display: none;
       align-items: center;
       justify-content: center;
+      gap: 2.4rem;
       width: 100%;
       height: 100%;
     }
@@ -211,6 +219,7 @@
 
     .sideBar_titles_wrapper {
       position: relative;
+      min-width: var(--avatar-container-size);
       width: var(--avatar-container-size);
       height: 4rem;
     }
@@ -248,7 +257,7 @@
     }
 
     .sideBar_languages {
-      height: 10rem;
+      height: 8.2rem;
       border-radius: 2rem 0 0 0;
     }
 
@@ -469,25 +478,36 @@
       align-items: center;
       width: max-content;
       text-align: center;
-      border-bottom: 0.1rem solid var(--color-light);
+      word-break: break-all;
     }
 
-    .lists_item_text__sm {
+    .lists_item_language {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 0.8rem;
+      width: max-content;
+      text-align: center;
+    }
+
+    .text_size__sm {
       font-size: 1rem;
       line-height: 1.2rem;
-      word-break: break-all;
     }
 
-    .lists_item_text__md {
+    .text_size__md {
       font-size: 1.4rem;
       line-height: 1.4rem;
-      word-break: break-all;
     }
 
-    .lists_item_text__lg {
+    .text_size__lg {
       font-size: 1.6rem;
       line-height: 1.8rem;
-      word-break: break-all;
+    }
+
+    .lists_item_link {
+      border-bottom: 0.1rem solid var(--color-light);
     }
 
     .lists_item_link:hover {
@@ -496,14 +516,114 @@
 
     .description {
       position: absolute;
-      top: -10rem;
+      top: -5rem;
       width: 100%;
-      height: calc(100% + 9rem);
+      height: 100%;
       background-color: red;
     }
 
     .top_left_radius {
       border-radius: 70px 0 0 0;
+    }
+
+    .rating_circle {
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 4.4rem;
+      height: 4.4rem;
+      border-radius: 50%;
+      background-color: var(--color-dark);
+      overflow: hidden;
+      z-index: 2;
+    }
+
+    .rating_circle_border {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      border-radius: 50%;
+      border: 0.4rem solid rgb(160, 142, 93);
+    }
+
+    .rating_circle_border__50 {
+      border-bottom-color: transparent;
+      border-left-color: transparent;
+      transform: rotate(45deg);
+      z-index: 1;
+
+    }
+
+    .rating_circle_border__rotate65deg {
+      border-bottom-color: transparent;
+      border-left-color: transparent;
+      transform: rotate(65deg);
+      z-index: 3;
+    }
+
+    .rating_circle_border__rotate215deg {
+      border-bottom-color: transparent;
+      border-left-color: transparent;
+      transform: rotate(215deg);
+      z-index: 3;
+    }
+
+    .box_rounded_corners {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      width: var(--avatar-container-size);
+      height: 4rem;
+      text-align: center;
+      border-radius: 2rem;
+      background-color: var(--color-dark);
+    }
+
+    .button {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: var(--avatar-container-size);
+      height: 4rem;
+      border-radius: 2rem;
+    }
+
+    .button_text {
+      color: inherit;
+      font-weight: 600;
+      letter-spacing: 0.2rem;
+    }
+
+    .button__active {
+      color: var(--color-light);
+      background-color: var(--color-dark);
+    }
+
+    .button__passive {
+      color: var(--color-dark);
+      background-color: transparent;
+      border: 0.2rem solid var(--color-dark);
+    }
+
+    .button:hover {
+      box-shadow: 0 0 1rem var(--color-dark);
+    }
+
+    .sideBar__visibleOnSmallDevices {
+      position: absolute;
+      top: 0;
+      left: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      min-width: calc(var(--avatar-container-size) * 2);
+      width: calc(var(--avatar-container-size) * 2);
+      background-color: var(--color-dark);
+      box-shadow: 2rem 0 2rem #000;
+      z-index: 10;
     }
 
     @media only screen and (max-width: 980px) {
@@ -578,6 +698,12 @@
 
       .sideBar {
         display: none;
+      }
+
+      .sideBar_titles_wrapper {
+        position: relative;
+        min-width: calc(var(--avatar-container-size) * 2);
+        width: calc(var(--avatar-container-size) * 2);
       }
 
       .titles {
@@ -691,14 +817,22 @@
           </div>
 
           <nav class="nav_block bg__light">
-            <ul class="nav_list">
-              <li>Description</li>
-              <li>Contents</li>
+            <ul id="toggle" class="nav_list">
+              <li>
+                <button id="btn_description" class="button button__active button_text text_size__md" type="button">
+                  Description
+                </button>
+              </li>
+              <li>
+                <button id="btn_mainInfo" class="button button__passive button_text text_size__mdt" type="button">
+                  Main Info
+                </button>
+              </li>
             </ul>
           </nav>
 
           <div class="portfolio_info">
-            <aside class="sideBar">
+            <aside id="sideBar" class="sideBar">
 
               <div class="sideBar_titles_wrapper bg__dark">
                 <div class="sideBar_titles__lightRightSide bg__light"></div>
@@ -713,7 +847,7 @@
                   <li class="lists_item">
                     <div class="icon_bg large_icon icon_bg__phone"></div>
                     <a href="tel:+38(066)6715180" target="_blank"
-                      class="lists_item_text lists_item_text__md lists_item_link text__dark" rel="noopener noreferrer">
+                      class="lists_item_text text_size__md lists_item_link text__dark" rel="noopener noreferrer">
                       +38 (066) 671-51-80
                     </a>
                   </li>
@@ -721,7 +855,7 @@
                   <li class="lists_item">
                     <div class="icon_bg large_icon icon_bg__email"></div>
                     <a href="mailto:krasnoshchokovoleksandr@gmail.com"
-                      class="lists_item_text__sm lists_item_link text__dark">
+                      class="lists_item_text text_size__sm lists_item_link text__dark">
                       krasnoshchokovoleksandr@gmail.com
                     </a>
                   </li>
@@ -729,7 +863,7 @@
                   <li class="lists_item">
                     <div class="icon_bg large_icon icon_bg__location"></div>
                     <a href="https://goo.gl/maps/bGuUh7grEqxu5jSo8" target="_blank"
-                      class="lists_item_text lists_item_text__md lists_item_link text__dark" rel="noopener noreferrer">
+                      class="lists_item_text text_size__md lists_item_link text__dark" rel="noopener noreferrer">
                       Lutsk, Ukraine
                     </a>
                   </li>
@@ -739,16 +873,14 @@
                     <ul class="lists_item">
                       <li>
                         <a href="https://github.com/Sasha-Krasnoshchokov" target="_blank"
-                          class="lists_item_text lists_item_text__md lists_item_link text__dark"
-                          rel="noopener noreferrer">
+                          class="lists_item_text text_size__md lists_item_link text__dark" rel="noopener noreferrer">
                           GitHub
                         </a>
                       </li>
                       <span>/</span>
                       <li>
                         <a href="https://www.linkedin.com/in/oleksandr-krasnoshchokov-8a448315b/" target="_blank"
-                          class="lists_item_text lists_item_text__md lists_item_link   text__dark"
-                          rel="noopener noreferrer">
+                          class="lists_item_text text_size__md lists_item_link   text__dark" rel="noopener noreferrer">
                           LinkedIn
                         </a>
                       </li>
@@ -774,7 +906,7 @@
                         <a href="https://en.wikipedia.org/wiki/HTML" target="_blank" class="lists_item"
                           rel="noopener noreferrer">
                           <div class="icon_bg small_icon icon_bg__html5"></div>
-                          <span class="lists_item_text lists_item_text__md lists_item_link text__dark">
+                          <span class="lists_item_text text_size__md lists_item_link text__dark">
                             HTML5
                           </span>
                         </a>
@@ -782,7 +914,7 @@
                       <li class="lists_item">
                         <a href="https://sass-lang.com/" target="_blank" class="lists_item" rel="noopener noreferrer">
                           <div class="icon_bg small_icon icon_bg__scss"></div>
-                          <span class="lists_item_text lists_item_text__md lists_item_link text__dark">
+                          <span class="lists_item_text text_size__md lists_item_link text__dark">
                             SASS
                           </span>
                         </a>
@@ -795,7 +927,7 @@
                       <li class="lists_item">
                         <a href="https://react.dev/" target="_blank" class="lists_item" rel="noopener noreferrer">
                           <div class="icon_bg small_icon icon_bg__react"></div>
-                          <span class="lists_item_text lists_item_text__md lists_item_link text__dark">
+                          <span class="lists_item_text text_size__md lists_item_link text__dark">
                             React
                           </span>
                         </a>
@@ -803,7 +935,7 @@
                       <li class="lists_item">
                         <a href="https://redux.js.org/" target="_blank" class="lists_item" rel="noopener noreferrer">
                           <div class="icon_bg small_icon icon_bg__redux"></div>
-                          <span class="lists_item_text lists_item_text__md lists_item_link text__dark">
+                          <span class="lists_item_text text_size__md lists_item_link text__dark">
                             Redux
                           </span>
                         </a>
@@ -816,7 +948,7 @@
                       <li class="lists_item">
                         <a href="https://nextjs.org/" target="_blank" class="lists_item" rel="noopener noreferrer">
                           <div class="icon_bg small_icon icon_bg__next"></div>
-                          <span class="lists_item_text lists_item_text__md lists_item_link text__dark">
+                          <span class="lists_item_text text_size__md lists_item_link text__dark">
                             NextJS
                           </span>
                         </a>
@@ -825,7 +957,7 @@
                         <a href="https://en.wikipedia.org/wiki/Representational_state_transfer" target="_blank"
                           class="lists_item" rel="noopener noreferrer">
                           <div class="icon_bg small_icon icon_bg__restApi"></div>
-                          <span class="lists_item_text lists_item_text__sm lists_item_link text__dark">
+                          <span class="lists_item_text text_size__sm lists_item_link text__dark">
                             REST API
                           </span>
                         </a>
@@ -838,7 +970,7 @@
                       <li class="lists_item">
                         <a href="https://mui.com/" target="_blank" class="lists_item" rel="noopener noreferrer">
                           <div class="icon_bg small_icon icon_bg__mui"></div>
-                          <span class="lists_item_text lists_item_text__sm lists_item_link text__dark">
+                          <span class="lists_item_text text_size__sm lists_item_link text__dark">
                             Material UI
                           </span>
                         </a>
@@ -847,7 +979,7 @@
                         <a href="https://storybook.js.org/" target="_blank" class="lists_item"
                           rel="noopener noreferrer">
                           <div class="icon_bg small_icon icon_bg__storybook"></div>
-                          <span class="lists_item_text lists_item_text__sm lists_item_link text__dark">
+                          <span class="lists_item_text text_size__sm lists_item_link text__dark">
                             Storybook
                           </span>
                         </a>
@@ -861,7 +993,7 @@
                         <a href="https://www.figma.com/organization/" target="_blank" class="lists_item"
                           rel="noopener noreferrer">
                           <div class="icon_bg small_icon icon_bg__figma"></div>
-                          <span class="lists_item_text lists_item_text__md lists_item_link text__dark">
+                          <span class="lists_item_text text_size__md lists_item_link text__dark">
                             Figma
                           </span>
                         </a>
@@ -870,7 +1002,7 @@
                         <a href="https://www.atlassian.com/software/jira" target="_blank" class="lists_item"
                           rel="noopener noreferrer">
                           <div class="icon_bg small_icon icon_bg__jira"></div>
-                          <span class="lists_item_text lists_item_text__md lists_item_link text__dark">
+                          <span class="lists_item_text text_size__md lists_item_link text__dark">
                             Jira
                           </span>
                         </a>
@@ -884,16 +1016,16 @@
                         <a href="https://atomicdesign.bradfrost.com/chapter-2/" target="_blank" class="lists_item"
                           rel="noopener noreferrer">
                           <div class="icon_bg small_icon icon_bg__adm"></div>
-                          <span class="lists_item_text lists_item_text__sm lists_item_link text__dark">
-                            Atomic DM
+                          <span class="lists_item_text text_size__sm lists_item_link text__dark">
+                            Ukraine
                           </span>
                         </a>
                       </li>
                       <li class="lists_item">
                         <a href="https://en.bem.info/" target="_blank" class="lists_item" rel="noopener noreferrer">
                           <div class="icon_bg small_icon icon_bg__bem"></div>
-                          <span class="lists_item_text lists_item_text__md lists_item_link text__dark">
-                            BEM
+                          <span class="lists_item_text text_size__md lists_item_link text__dark">
+                            English
                           </span>
                         </a>
                       </li>
@@ -905,7 +1037,7 @@
                       <li class="lists_item">
                         <a href="https://git-scm.com/" target="_blank" class="lists_item" rel="noopener noreferrer">
                           <div class="icon_bg small_icon icon_bg__git"></div>
-                          <span class="lists_item_text lists_item_text__sm lists_item_link text__dark">
+                          <span class="lists_item_text text_size__sm lists_item_link text__dark">
                             Git
                           </span>
                         </a>
@@ -913,7 +1045,7 @@
                       <li class="lists_item">
                         <a href="https://www.npmjs.com/" target="_blank" class="lists_item" rel="noopener noreferrer">
                           <div class="icon_bg small_icon icon_bg__npm"></div>
-                          <span class="lists_item_text lists_item_text__sm lists_item_link text__dark">
+                          <span class="lists_item_text text_size__sm lists_item_link text__dark">
                             npm
                           </span>
                         </a>
@@ -921,7 +1053,7 @@
                       <li class="lists_item">
                         <a href="https://yarnpkg.com/" target="_blank" class="lists_item" rel="noopener noreferrer">
                           <div class="icon_bg small_icon icon_bg__yarn"></div>
-                          <span class="lists_item_text lists_item_text__sm lists_item_link text__dark">
+                          <span class="lists_item_text text_size__sm lists_item_link text__dark">
                             Yarn
                           </span>
                         </a>
@@ -943,32 +1075,37 @@
                 <ul class="lists">
 
                   <li class="lists_item">
-                    <span class="lists_item_text lists_item_text__lg text__dark">
+                    <span class="lists_item_text text_size__lg text__dark">
                       Responsible
                     </span>
                   </li>
+
                   <li class="lists_item">
-                    <span class="lists_item_text lists_item_text__lg text__dark">
+                    <span class="lists_item_text text_size__lg text__dark">
                       Team worker
                     </span>
                   </li>
+
                   <li class="lists_item">
-                    <span class="lists_item_text lists_item_text__lg text__dark">
+                    <span class="lists_item_text text_size__lg text__dark">
                       Problem-solving
                     </span>
                   </li>
+
                   <li class="lists_item">
-                    <span class="lists_item_text lists_item_text__lg text__dark">
+                    <span class="lists_item_text text_size__lg text__dark">
                       Adaptive / Flexible
                     </span>
                   </li>
+
                   <li class="lists_item">
-                    <span class="lists_item_text lists_item_text__lg text__dark">
+                    <span class="lists_item_text text_size__lg text__dark">
                       Communicative
                     </span>
                   </li>
+
                   <li class="lists_item">
-                    <span class="lists_item_text lists_item_text__lg text__dark">
+                    <span class="lists_item_text text_size__lg text__dark">
                       Perfectionist
                     </span>
                   </li>
@@ -983,7 +1120,40 @@
                   <div class="icon_bg large_icon icon_bg__languages"></div>
                 </div>
               </div>
-              <div class="sideBar_block sideBar_languages bg__light"></div>
+              <div class="sideBar_block sideBar_languages bg__light">
+                <ul class="lists">
+                  <li class="lists_item">
+                    <ul class="sideBar_titles">
+                      <li class="lists_item_language">
+                        <div class="rating_circle">
+                          <div class="rating_circle_border rating_circle_border__50"></div>
+                          <div class="rating_circle_border rating_circle_border__50 rating_circle_border__rotate215deg">
+                          </div>
+                          <span class="lists_item_text text_size__sm text__light">
+                            99%
+                          </span>
+                        </div>
+                        <span class="lists_item_text text_size__md text__dark">
+                          Ukraine
+                        </span>
+                      </li>
+                      <li class="lists_item_language">
+                        <div class="rating_circle">
+                          <div class="rating_circle_border rating_circle_border__50"></div>
+                          <div class="rating_circle_border rating_circle_border__50 rating_circle_border__rotate65deg">
+                          </div>
+                          <span class="lists_item_text text_size__sm text__light">
+                            55%
+                          </span>
+                        </div>
+                        <span class="lists_item_text text_size__md text__dark">
+                          English
+                        </span>
+                      </li>
+                    </ul>
+                  </li>
+                </ul>
+              </div>
 
             </aside>
             <div class="description_container bg__light">
@@ -997,5 +1167,68 @@
     </div>
   </main>
 </body>
+
+<script>
+  'use strict'
+  let isBigDevise = window.innerWidth >= 750;
+  const btnDescription = document.getElementById('btn_description');
+  const btnMainInfo = document.getElementById('btn_mainInfo');
+  const sideBar = document.getElementById('sideBar');
+  const toggle = document.getElementById('toggle');
+
+  function doBtnActive(element)
+  {
+    element.classList.remove("button__passive");
+    element.classList.add("button__active");
+  }
+  function doBtnPassive(element)
+  {
+    element.classList.remove("button__active");
+    element.classList.add("button__passive");
+  }
+
+  function handleBtn(event)
+  {
+    event.stopPropagation();
+    console.log(event.currentTarget)
+    const target = event.target;
+    if (target && target.id === 'btn_description')
+    {
+      const classList = Object.values(target.classList);
+      if (classList.some(item => item === 'button__passive'))
+      {
+        doBtnActive(target);
+        doBtnPassive(btnMainInfo);
+        sideBar.classList.toggle('sideBar');
+        sideBar.classList.toggle('sideBar__visibleOnSmallDevices');
+      }
+    }
+    if (target && target.id === 'btn_mainInfo')
+    {
+      const classList = Object.values(target.classList);
+      if (classList.some(item => item === 'button__passive'))
+      {
+        doBtnActive(target);
+        doBtnPassive(btnDescription);
+        sideBar.classList.toggle('sideBar');
+        sideBar.classList.toggle('sideBar__visibleOnSmallDevices');
+      }
+    }
+  }
+
+  toggle.addEventListener('click', handleBtn);
+
+
+  window.addEventListener('resize', () =>
+  {
+    console.log({ isBigDevise })
+    if (window.innerWidth > 750 && !isBigDevise)
+    {
+      sideBar.classList.add('sideBar');
+      sideBar.classList.remove('sideBar__visibleOnSmallDevices');
+      isBigDevise = true;
+    }
+  });
+</script>
 
 </html>

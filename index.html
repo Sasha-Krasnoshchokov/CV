@@ -122,7 +122,6 @@
       margin: 0 auto;
       padding: 1rem;
       width: 900px;
-      /* min-height: 100vh; */
       background-color: rgb(112, 113, 116);
     }
 
@@ -137,7 +136,6 @@
     .portfolio {
       padding: 4rem 0 0 4rem;
       width: 100%;
-      /* min-height: 100vh; */
       box-shadow: 0 0 1rem rgba(256, 256, 256, 0.8);
     }
 
@@ -199,7 +197,7 @@
       display: flex;
       justify-content: center;
       width: 100%;
-      min-height: 100vh;
+      min-height: 76.2rem;
     }
 
     .sideBar {
@@ -1222,17 +1220,19 @@
 
   window.addEventListener('resize', () =>
   {
-    isBigDevise = window.innerWidth >= 750;
+    isBigDevise = window.innerWidth > 750;
     if (window.innerWidth > 750 && isBigDevise)
     {
+      doBtnActive(btnDescription);
+      doBtnPassive(btnMainInfo);
       sideBar.classList.add('sideBar');
       sideBar.classList.remove('sideBar__visibleOnSmallDevices');
       isBigDevise = true;
-    } else
-    {
-      sideBar.classList.remove('sideBar');
-      sideBar.classList.add('sideBar__visibleOnSmallDevices');
     }
+    // {
+    // sideBar.classList.add('sideBar');
+    // sideBar.classList.add('sideBar__visibleOnSmallDevices');
+    // }
   });
 </script>
 

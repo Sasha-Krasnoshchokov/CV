@@ -35,6 +35,15 @@
       text-decoration: none;
     }
 
+    h1,
+    h2,
+    h3,
+    h4 {
+      color: var(--color-dark);
+      font-weight: 600;
+      letter-spacing: 0.1rem;
+    }
+
     button {
       display: flex;
       align-items: center;
@@ -517,7 +526,14 @@
       position: absolute;
       top: -5rem;
       width: 100%;
-      height: 100%;
+      height: calc(100% + 5rem);
+      overflow-y: auto;
+    }
+
+    .description_about {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
     }
 
     .top_left_radius {
@@ -624,6 +640,50 @@
       z-index: 10;
     }
 
+    .article {
+      margin-bottom: 4rem;
+      padding: 0 5rem;
+    }
+
+    .article:last-child {
+      margin-bottom: 1rem;
+    }
+
+    .article_title {
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+      margin-bottom: 1.6rem;
+      padding-bottom: 1rem;
+      border-bottom: 0.4rem solid var(--color-dark);
+    }
+
+    .article_icon {
+      margin-right: 2rem;
+      min-width: 5rem;
+      min-height: 5rem;
+    }
+
+    .article_title_text {
+      font-size: 4rem;
+    }
+
+    .article_icon_summary {
+      background-image: url(./profile_icon.png);
+    }
+
+    .article_icon_experience {
+      background-image: url(./experience.png);
+    }
+
+    .article_icon_education {
+      background-image: url(./education.png);
+    }
+
+    .article_text {
+      text-align: justify;
+    }
+
     @media only screen and (max-width: 980px) {
       .portfolio_wrapper {
         width: 100%;
@@ -651,6 +711,15 @@
         font-weight: 700;
         line-height: 5rem;
         letter-spacing: 0.2rem;
+      }
+
+      .article {
+        margin-bottom: 2rem;
+        padding: 0 2.6rem;
+      }
+
+      .article_title_text {
+        font-size: 3rem;
       }
     }
 
@@ -706,6 +775,24 @@
 
       .titles {
         font-size: 1.8rem;
+      }
+
+      .article {
+        margin-bottom: 2rem;
+        padding: 0 2rem;
+      }
+
+      .article_title_text {
+        font-size: 2.4rem;
+      }
+
+      .article_text {
+        font-size: 1.2rem;
+      }
+
+      .article_icon {
+        min-width: 3.2rem;
+        min-height: 3.2rem;
       }
 
     }
@@ -1155,8 +1242,42 @@
 
             </aside>
             <div class="description_container bg__light">
-              <section class="description">
-                Description
+              <section class="description description_about">
+                <article class="article">
+                  <div class="article_title">
+                    <div class="icon_bg article_icon article_icon_summary"></div>
+                    <h2 class="article_title_text">Summary</h2>
+                  </div>
+                  <p class="article_text">
+                    &nbsp; &nbsp; I am a hard-working, responsible, reliable person,
+                    who is looking for a position as Frontend developer.
+                    <br />
+                    &nbsp; &nbsp; I have good knowledge of JS / TS, HTML5, CSS3, React/Redux/NextJS,
+                    style libraries (Material UI, Tailwind, Bootstrap, styled component), REST API technologies.
+                    <br />
+                    &nbsp; &nbsp; Get on well with people at all levels, easily making good working relationships.
+                    Eager to develop my skills. Friendly, team player,persistent, purposeful.
+                  </p>
+                </article>
+                <article class="article">
+                  <div class="article_title">
+                    <div class="icon_bg article_icon article_icon_experience"></div>
+                    <h2 class="article_title_text">Work Experience</h2>
+                  </div>
+                  <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Veniam necessitatibus dignissimos iure
+                    tempora fuga fugiat consequatur odit repellat distinctio facilis beatae, sit reprehenderit
+                    perspiciatis officiis a iusto aperiam doloribus fugit.</p>
+                </article>
+                <article class="article">
+                  <div class="article_title">
+                    <div class="icon_bg article_icon article_icon_education"></div>
+                    <h2 class="article_title_text">Education</h2>
+                  </div>
+                  <span>
+                    <h3 class="article_text">Lutsk National Technical University</h3>
+                    <p><i>Specialist&apos;s degree in engineering</i></p>
+                  </span>
+                </article>
               </section>
             </div>
           </div>

@@ -7,10 +7,12 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="icon" href="favicon.svg" />
   <title>CV</title>
-  <link href="https://fonts.googleapis.com/css2?family=Prompt:wght@200;400;600;700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Serif:wght@200;300;400;500;600;700&display=swap"
+    rel="stylesheet" />
+
   <style>
     :root {
-      font-family: 'Prompt', monospace;
+      font-family: 'IBM Plex Serif', Times, serif;
       font-size: 10px;
       font-weight: 400;
 
@@ -54,219 +56,59 @@
       cursor: pointer;
     }
 
-    .main {
+    .main_title {
       position: relative;
-      width: 100vw;
-      min-height: 100vh;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      padding: 0 1.2rem 1% 1.2rem;
+      width: min-content;
+      font-size: 4.4rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      line-height: 5rem;
+      letter-spacing: 0.4rem;
+      border-bottom: 0.4rem solid #000;
+    }
+
+    .text_size__sm {
+      font-size: 1rem;
+      line-height: 1.2rem;
+    }
+
+    .text_size__md {
       font-size: 1.4rem;
-      overflow: hidden;
-      background: radial-gradient(circle, rgba(37, 48, 166, 1) 0%, rgba(91, 58, 197, 0.5) 50%, rgba(37, 48, 166, 0) 100%);
+      line-height: 1.4rem;
     }
 
-    .box_container {
-      position: absolute;
-      top: 0;
-      right: 0;
-      width: 100vw;
-      height: 100vh;
-      opacity: 0.5;
+    .button_text {
+      color: inherit;
+      font-weight: 600;
+      letter-spacing: 0.2rem;
     }
 
-    .bg_image {
-      position: absolute;
-      width: 50%;
-      height: 50%;
-      background-repeat: no-repeat;
-      background-position: center;
-      background-size: cover;
-    }
-
-    .top__left {
-      top: -10%;
-      left: -10%;
-      z-index: 3;
-      background-image: url(./workingLaptop2.png);
-      transform: rotateZ(315deg);
-    }
-
-    .top__right {
-      top: -10%;
-      right: -10%;
-      z-index: 4;
-      background-image: url(./workingLaptop.png);
-      transform: rotateZ(15deg);
-    }
-
-    .middle__left {
-      top: 40%;
-      left: -15%;
-      z-index: 2;
-      background-image: url(./photo1.png);
-    }
-
-    .middle__right {
-      top: 25%;
-      right: -5%;
-      background-image: url(./shopping.png);
-    }
-
-    .bottom__right {
-      bottom: -15%;
-      right: -10%;
-      z-index: 4;
-      background-image: url(./buying.png);
-      transform: rotateZ(10deg);
-    }
-
-    .portfolio_container {
-      padding: 2.4rem 4rem;
-      background: transparent;
-      z-index: 10;
-      overflow-x: hidden;
-      overflow-y: auto;
-      opacity: 1;
-    }
-
-    .portfolio_wrapper {
-      margin: 0 auto;
-      padding: 1rem;
-      width: 900px;
-      background-color: rgb(112, 113, 116);
-    }
-
-    .bg__light {
-      background-color: var(--color-light);
-    }
-
-    .bg__dark {
-      background-color: var(--color-dark);
-    }
-
-    .portfolio {
-      padding: 4rem 0 0 4rem;
-      width: 100%;
-      box-shadow: 0 0 1rem rgba(256, 256, 256, 0.8);
-    }
-
-    .profile {
-      position: relative;
-      display: flex;
-      justify-content: center;
-    }
-
-    .avatar_container {
-      position: relative;
-      min-width: var(--avatar-container-size);
-      width: var(--avatar-container-size);
-      height: var(--avatar-container-size);
-    }
-
-    .avatar_wrapper {
-      padding: 0 1.6rem 1.6rem 0;
-      width: 100%;
-      height: 100%;
-      border-radius: 0 0 50% 0;
-    }
-
-    .avatar_bg {
+    .article_title {
       display: flex;
       align-items: center;
-      justify-content: center;
-      width: 100%;
-      height: 100%;
-      border-radius: 50%;
-      background-color: rgb(160, 142, 93);
-      box-shadow: 0.8rem 0 0.8rem rgb(0, 0, 0);
+      justify-content: flex-start;
+      margin-bottom: 1.6rem;
+      padding-bottom: 1rem;
+      border-bottom: 0.4rem solid var(--color-dark);
     }
 
-    .avatar {
-      width: 90%;
-      height: 90%;
-      border-radius: 50%;
-      box-shadow: 0.6rem 0 0.6rem rgb(0, 0, 0);
+    .article_title_text {
+      font-size: 3.2rem;
     }
 
-    .nav_block {
-      width: 100%;
-      height: 8rem;
-      border-radius: 6rem 0 0 2rem;
+    .article_text {
+      font-size: 1.4rem;
+      letter-spacing: 0.1rem;
     }
 
-    .nav_list {
-      display: none;
-      align-items: center;
-      justify-content: center;
-      gap: 2.4rem;
-      width: 100%;
-      height: 100%;
-    }
-
-    .portfolio_info {
-      position: relative;
-      display: flex;
-      justify-content: center;
-      width: 100%;
-      min-height: 76.2rem;
-    }
-
-    .sideBar {
-      position: relative;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      min-width: var(--avatar-container-size);
-      width: var(--avatar-container-size);
-    }
-
-    .sideBar_block {
-      display: flex;
-      padding: 0.8rem;
-      width: 100%;
-      border-radius: 2rem 0 0 2rem;
-    }
-
-    .sideBar_titles_wrapper {
-      position: relative;
-      min-width: var(--avatar-container-size);
-      width: var(--avatar-container-size);
-      height: 4rem;
-    }
-
-    .sideBar_titles__lightRightSide {
-      position: absolute;
-      top: 0;
-      right: 0;
-      bottom: 0;
-      width: 50%;
-    }
-
-    .sideBar_titles {
-      position: relative;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 1.2rem;
-      padding: 0 0.5rem;
-      width: 100%;
-      height: 100%;
-      border-radius: 2rem;
-    }
-
-    .sideBar_contacts {
-      height: 16rem;
-    }
-
-    .sideBar_techSkills {
-      height: 20rem;
-    }
-
-    .sideBar_softSkills {
-      height: 16rem;
-    }
-
-    .sideBar_languages {
-      height: 8.2rem;
-      border-radius: 2rem 0 0 0;
+    .experience_link {
+      font-size: 2rem;
+      line-height: 2.4rem;
+      font-weight: 600;
     }
 
     .titles {
@@ -283,579 +125,6 @@
     .text__dark {
       color: var(--color-dark);
     }
-
-    .icon_bg {
-      border-radius: 50%;
-      background-repeat: no-repeat;
-      background-position: center;
-      background-size: cover;
-    }
-
-    .large_icon {
-      min-width: 3rem;
-      min-height: 3rem;
-    }
-
-    .small_icon {
-      min-width: 2rem;
-      min-height: 2rem;
-    }
-
-    .icon_bg__contacts {
-      background-image: url(./contacts.png);
-    }
-
-    .icon_bg__techSkills {
-      background-image: url(./techSkills.png);
-    }
-
-    .icon_bg__softSkills {
-      background-image: url(./softSkills.png);
-    }
-
-    .icon_bg__languages {
-      background-image: url(./languages.png);
-    }
-
-    .icon_bg__hobbies {
-      background-image: url(./hobbies.png);
-    }
-
-    .icon_bg__phone {
-      background-image: url(./phone.png);
-    }
-
-    .icon_bg__email {
-      background-image: url(./email.png);
-    }
-
-    .icon_bg__location {
-      background-image: url(./location.png);
-    }
-
-    .icon_bg__socials {
-      background-image: url(./socials.png);
-    }
-
-    .icon_bg__react {
-      background-image: url(./react.png);
-    }
-
-    .icon_bg__next {
-      background-image: url(./nextjs.png);
-    }
-
-    .icon_bg__redux {
-      background-image: url(./redux.png);
-    }
-
-    .icon_bg__javascript {
-      background-image: url(./javascript.png);
-    }
-
-    .icon_bg__typescript {
-      background-image: url(./typescript.png);
-    }
-
-    .icon_bg__html5 {
-      background-image: url(./html5.png);
-    }
-
-    .icon_bg__scss {
-      background-image: url(./scss.png);
-    }
-
-    .icon_bg__restApi {
-      background-image: url(./restApi.png);
-    }
-
-    .icon_bg__mui {
-      background-image: url(./mui.png);
-    }
-
-    .icon_bg__storybook {
-      background-image: url(./storybook.png);
-    }
-
-    .icon_bg__adm {
-      background-image: url(./adm.png);
-    }
-
-    .icon_bg__bem {
-      background-image: url(./bem.png);
-    }
-
-    .icon_bg__git {
-      background-image: url(./git.png);
-    }
-
-    .icon_bg__npm {
-      background-image: url(./npm.png);
-    }
-
-    .icon_bg__yarn {
-      background-image: url(./yarn.png);
-    }
-
-    .icon_bg__figma {
-      background-image: url(./figma.png);
-    }
-
-    .icon_bg__jira {
-      background-image: url(./jira.png);
-    }
-
-    .description_container {
-      position: relative;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      width: 100%;
-    }
-
-    .main_title {
-      position: relative;
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      padding: 0 1.2rem 1% 1.2rem;
-      width: min-content;
-      font-size: 4.4rem;
-      font-weight: 600;
-      text-transform: uppercase;
-      line-height: 5rem;
-      letter-spacing: 0.4rem;
-      border-bottom: 0.4rem solid #000;
-    }
-
-    .main_title_decorate {
-      color: rgb(160, 142, 93);
-    }
-
-    .black_circle {
-      position: absolute;
-      bottom: -0.8rem;
-      width: 1.2rem;
-      height: 1.2rem;
-      border-radius: 50%;
-      background-color: #000;
-    }
-
-    .black_circle__left {
-      left: 0;
-    }
-
-    .black_circle__right {
-      right: 0;
-    }
-
-    .jobPosition_title {
-      width: 100%;
-      font-size: 2.6rem;
-      font-weight: 700;
-      line-height: 5rem;
-      text-align: center;
-      letter-spacing: 0.2rem;
-    }
-
-    .job_link:hover {
-      border-bottom: 0.2rem solid var(--color-dark);
-    }
-
-    .lists {
-      display: flex;
-      flex-direction: column;
-      justify-content: flex-start;
-      gap: 0.6rem;
-      width: 100%;
-      height: 100%;
-    }
-
-    .lists_item {
-      position: relative;
-      display: flex;
-      align-items: center;
-      gap: 0.8rem;
-      width: 100%;
-      height: max-content;
-    }
-
-    .lists_item_text {
-      display: flex;
-      align-items: center;
-      width: max-content;
-      text-align: center;
-      word-break: break-all;
-    }
-
-    .lists_item_language {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      gap: 0.8rem;
-      width: max-content;
-      text-align: center;
-    }
-
-    .text_size__sm {
-      font-size: 1rem;
-      line-height: 1.2rem;
-    }
-
-    .text_size__md {
-      font-size: 1.4rem;
-      line-height: 1.4rem;
-    }
-
-    .text_size__lg {
-      font-size: 1.6rem;
-      line-height: 1.8rem;
-    }
-
-    .lists_item_link {
-      border-bottom: 0.1rem solid var(--color-light);
-    }
-
-    .lists_item_link:hover {
-      border-bottom: 0.1rem solid var(--color-dark);
-    }
-
-    .description {
-      position: absolute;
-      top: -8rem;
-      width: 100%;
-      height: calc(100% + 8rem);
-      overflow-y: auto;
-    }
-
-    .description_about {
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-    }
-
-    .top_left_radius {
-      border-radius: 70px 0 0 0;
-    }
-
-    .rating_circle {
-      position: relative;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      width: 4.4rem;
-      height: 4.4rem;
-      border-radius: 50%;
-      background-color: var(--color-dark);
-      overflow: hidden;
-      z-index: 2;
-    }
-
-    .rating_circle_border {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      border-radius: 50%;
-      border: 0.4rem solid rgb(160, 142, 93);
-    }
-
-    .rating_circle_border__50 {
-      border-bottom-color: transparent;
-      border-left-color: transparent;
-      transform: rotate(45deg);
-      z-index: 1;
-
-    }
-
-    .rating_circle_border__rotate65deg {
-      border-bottom-color: transparent;
-      border-left-color: transparent;
-      transform: rotate(65deg);
-      z-index: 3;
-    }
-
-    .rating_circle_border__rotate215deg {
-      border-bottom-color: transparent;
-      border-left-color: transparent;
-      transform: rotate(215deg);
-      z-index: 3;
-    }
-
-    .box_rounded_corners {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      width: var(--avatar-container-size);
-      height: 4rem;
-      text-align: center;
-      border-radius: 2rem;
-      background-color: var(--color-dark);
-    }
-
-    .button {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      width: var(--avatar-container-size);
-      height: 4rem;
-      border-radius: 2rem;
-    }
-
-    .button_text {
-      color: inherit;
-      font-weight: 600;
-      letter-spacing: 0.2rem;
-    }
-
-    .button__active {
-      color: var(--color-light);
-      background-color: var(--color-dark);
-    }
-
-    .button__passive {
-      color: var(--color-dark);
-      background-color: transparent;
-      border: 0.2rem solid var(--color-dark);
-    }
-
-    .button:hover {
-      box-shadow: 0 0 1rem var(--color-dark);
-    }
-
-    .sideBar__visibleOnSmallDevices {
-      position: absolute;
-      top: 0;
-      left: 0;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      min-width: calc(var(--avatar-container-size) * 2);
-      width: calc(var(--avatar-container-size) * 2);
-      background-color: var(--color-dark);
-      box-shadow: 1rem 1.2rem 1.4rem var(--color-dark);
-      z-index: 10;
-    }
-
-    .article {
-      margin-bottom: 2.4rem;
-      padding: 0 4rem;
-    }
-
-    .article:last-child {
-      margin-bottom: 1rem;
-    }
-
-    .article_title {
-      display: flex;
-      align-items: center;
-      justify-content: flex-start;
-      margin-bottom: 1.6rem;
-      padding-bottom: 1rem;
-      border-bottom: 0.4rem solid var(--color-dark);
-    }
-
-    .article_icon {
-      margin-right: 2rem;
-      min-width: 4rem;
-      min-height: 4rem;
-    }
-
-    .article_title_text {
-      font-size: 3.2rem;
-    }
-
-    .article_icon_summary {
-      background-image: url(./profile_icon.png);
-    }
-
-    .article_icon_experience {
-      background-image: url(./experience.png);
-    }
-
-    .article_icon_education {
-      background-image: url(./education.png);
-    }
-
-    .experience_link {
-      font-size: 2rem;
-      line-height: 2.4rem;
-      font-weight: 600;
-    }
-
-    @media only screen and (max-width: 980px) {
-      .portfolio_wrapper {
-        width: 100%;
-      }
-
-      .portfolio_bg {
-        padding: 2.4rem 0 0 2.4rem;
-      }
-
-      .main_title {
-        font-size: 3.2rem;
-        line-height: 4rem;
-        letter-spacing: 0.2rem;
-        border-bottom: 0.3rem solid #000;
-      }
-
-      .black_circle {
-        bottom: -0.5rem;
-        width: 0.8rem;
-        height: 0.8rem;
-      }
-
-      .jobPosition_title {
-        font-size: 2.2rem;
-        font-weight: 700;
-        line-height: 5rem;
-        letter-spacing: 0.2rem;
-      }
-
-      .article {
-        margin-bottom: 2rem;
-        padding: 0 2.6rem;
-      }
-
-      .article_title_text {
-        font-size: 3rem;
-      }
-    }
-
-    @media only screen and (max-width: 750px) {
-      :root {
-        --avatar-container-size: 12rem;
-      }
-
-      .portfolio_container {
-        padding: 1.6rem;
-      }
-
-      .portfolio {
-        padding: 1.6rem 0 0 1.6rem;
-      }
-
-      .jobPosition_title {
-        font-size: 2rem;
-        font-weight: 700;
-        line-height: 3.2rem;
-        letter-spacing: 0.2rem;
-      }
-
-      .top_left_radius {
-        border-radius: 40px 0 0 0;
-      }
-
-      .nav_block {
-        height: 6rem;
-        border-radius: 3.2rem 0 0 0;
-      }
-
-      .nav_list {
-        display: flex;
-      }
-
-      .description {
-        position: relative;
-        top: 0;
-        width: 100%;
-        height: 100%;
-      }
-
-      .sideBar {
-        display: none;
-      }
-
-      .sideBar_titles_wrapper {
-        position: relative;
-        min-width: calc(var(--avatar-container-size) * 2);
-        width: calc(var(--avatar-container-size) * 2);
-      }
-
-      .titles {
-        font-size: 1.8rem;
-      }
-
-      .article {
-        margin-bottom: 2rem;
-        padding: 0 2rem;
-      }
-
-      .article_title_text {
-        font-size: 2.4rem;
-      }
-
-      .article_text {
-        font-size: 1.2rem;
-      }
-
-      .article_icon {
-        min-width: 3.2rem;
-        min-height: 3.2rem;
-      }
-
-    }
-
-    @media only screen and (max-width: 600px) {
-      .main_title {
-        font-size: 3rem;
-      }
-    }
-
-    @media only screen and (max-width: 544px) {
-      .bg_image {
-        width: 100%;
-      }
-
-      .main_title {
-        font-size: 1.8rem;
-        line-height: 3rem;
-        font-weight: 700;
-        border-bottom: 0.2rem solid #000;
-      }
-
-      .black_circle {
-        bottom: -0.4rem;
-        width: 0.6rem;
-        height: 0.6rem;
-      }
-
-      .jobPosition_title {
-        font-size: 1.4rem;
-        font-weight: 600;
-        line-height: 3rem;
-        letter-spacing: 0;
-      }
-    }
-
-    @media only screen and (max-width: 440px) {
-      .portfolio_container {
-        padding: 0.8rem;
-      }
-
-      .main_title {
-        font-size: 1.2rem;
-        line-height: 2rem;
-        font-weight: 700;
-        padding: 0 0.8rem 1% 0.8rem;
-      }
-
-      .jobPosition_title {
-        font-size: 1rem;
-        font-weight: 400;
-        line-height: 3rem;
-        letter-spacing: 0;
-      }
-    }
-
-    @media only screen and (max-width: 360px) {
-      .profile {
-        overflow: hidden;
-      }
-    }
   </style>
 </head>
 
@@ -870,18 +139,20 @@
     </div>
 
     <div class="box_container portfolio_container">
-      <div class="portfolio_wrapper">
+      <div id="printable" class="portfolio_wrapper">
         <div class="portfolio bg__dark">
 
           <div class="profile">
 
-            <div class="avatar_container bg__light">
+            <div class="avatar_container">
               <div class="avatar_wrapper bg__dark">
                 <div class="avatar_bg">
                   <img class="avatar" src="./avatar.png" alt="Avatar">
                 </div>
               </div>
             </div>
+
+            <div class="bg_box bg__light"></div>
 
             <div class="description_container top_left_radius bg__light">
               <h2 class="main_title">
@@ -904,6 +175,9 @@
           </div>
 
           <nav class="nav_block bg__light">
+            <button id="pdf_download" type="button" class="icon_bg pdf_download_btn">
+              <img src="./pdf_download.png" alt="pdf" class="img_round pdf_download_btn">
+            </button>
             <ul id="toggle" class="nav_list">
               <li>
                 <button id="btn_description" class="button button__active button_text text_size__md" type="button">
@@ -919,20 +193,21 @@
           </nav>
 
           <div class="portfolio_info">
+
             <aside id="sideBar" class="sideBar">
 
               <div class="sideBar_titles_wrapper bg__dark">
                 <div class="sideBar_titles__lightRightSide bg__light"></div>
                 <div class="sideBar_titles bg__dark">
                   <h2 class="titles text__light">Contacts</h2>
-                  <div class="icon_bg large_icon icon_bg__contacts"></div>
+                  <img src="./contacts.png" alt="contacts icon" class="img_round img_lg" />
                 </div>
               </div>
               <div class="sideBar_block sideBar_contacts bg__light">
                 <ul class="lists">
 
                   <li class="lists_item">
-                    <div class="icon_bg large_icon icon_bg__phone"></div>
+                    <img src="./phone.png" alt="phone icon" class="img_round img_lg" />
                     <a href="tel:+38(066)6715180" target="_blank"
                       class="lists_item_text text_size__md lists_item_link text__dark" rel="noopener noreferrer">
                       +38 (066) 671-51-80
@@ -940,15 +215,15 @@
                   </li>
 
                   <li class="lists_item">
-                    <div class="icon_bg large_icon icon_bg__email"></div>
+                    <img src="./email.png" alt="email icon" class="img_round img_lg" />
                     <a href="mailto:krasnoshchokovoleksandr@gmail.com"
-                      class="lists_item_text text_size__sm lists_item_link text__dark">
+                      class="lists_item_text text_size__md lists_item_link text__dark">
                       krasnoshchokovoleksandr@gmail.com
                     </a>
                   </li>
 
                   <li class="lists_item">
-                    <div class="icon_bg large_icon icon_bg__location"></div>
+                    <img src="./location.png" alt="location icon" class="img_round img_lg" />
                     <a href="https://goo.gl/maps/bGuUh7grEqxu5jSo8" target="_blank"
                       class="lists_item_text text_size__md lists_item_link text__dark" rel="noopener noreferrer">
                       Lutsk, Ukraine
@@ -956,7 +231,7 @@
                   </li>
 
                   <li class="lists_item">
-                    <div class="icon_bg large_icon icon_bg__socials"></div>
+                    <img src="./socials.png" alt="socials icon" class="img_round img_lg" />
                     <ul class="lists_item">
                       <li>
                         <a href="https://github.com/Sasha-Krasnoshchokov" target="_blank"
@@ -981,7 +256,7 @@
                 <div class="sideBar_titles__lightRightSide bg__light"></div>
                 <div class="sideBar_titles bg__dark">
                   <h2 class="titles text__light">Tech skills</h2>
-                  <div class="icon_bg large_icon icon_bg__techSkills"></div>
+                  <img src="./techSkills.png" alt="tech skills icon" class="img_round img_lg" />
                 </div>
               </div>
               <div class="sideBar_block sideBar_techSkills bg__light">
@@ -992,7 +267,7 @@
                       <li class="lists_item">
                         <a href="https://en.wikipedia.org/wiki/HTML" target="_blank" class="lists_item"
                           rel="noopener noreferrer">
-                          <div class="icon_bg small_icon icon_bg__html5"></div>
+                          <img src="./html5.png" alt="html5 icon" class="img_round img_sm" />
                           <span class="lists_item_text text_size__md lists_item_link text__dark">
                             HTML5
                           </span>
@@ -1000,7 +275,7 @@
                       </li>
                       <li class="lists_item">
                         <a href="https://sass-lang.com/" target="_blank" class="lists_item" rel="noopener noreferrer">
-                          <div class="icon_bg small_icon icon_bg__scss"></div>
+                          <img src="./sass.png" alt="SASS icon" class="img_round img_sm" />
                           <span class="lists_item_text text_size__md lists_item_link text__dark">
                             SASS
                           </span>
@@ -1013,7 +288,7 @@
                     <ul class="sideBar_titles">
                       <li class="lists_item">
                         <a href="https://react.dev/" target="_blank" class="lists_item" rel="noopener noreferrer">
-                          <div class="icon_bg small_icon icon_bg__react"></div>
+                          <img src="./react.png" alt="react icon" class="img_round img_sm" />
                           <span class="lists_item_text text_size__md lists_item_link text__dark">
                             React
                           </span>
@@ -1021,7 +296,7 @@
                       </li>
                       <li class="lists_item">
                         <a href="https://redux.js.org/" target="_blank" class="lists_item" rel="noopener noreferrer">
-                          <div class="icon_bg small_icon icon_bg__redux"></div>
+                          <img src="./redux.png" alt="redux icon" class="img_round img_sm" />
                           <span class="lists_item_text text_size__md lists_item_link text__dark">
                             Redux
                           </span>
@@ -1034,7 +309,7 @@
                     <ul class="sideBar_titles">
                       <li class="lists_item">
                         <a href="https://nextjs.org/" target="_blank" class="lists_item" rel="noopener noreferrer">
-                          <div class="icon_bg small_icon icon_bg__next"></div>
+                          <img src="./nextjs.png" alt="NextJS icon" class="img_round img_sm" />
                           <span class="lists_item_text text_size__md lists_item_link text__dark">
                             NextJS
                           </span>
@@ -1043,7 +318,7 @@
                       <li class="lists_item">
                         <a href="https://en.wikipedia.org/wiki/Representational_state_transfer" target="_blank"
                           class="lists_item" rel="noopener noreferrer">
-                          <div class="icon_bg small_icon icon_bg__restApi"></div>
+                          <img src="./restApi.png" alt="rest api icon" class="img_round img_sm" />
                           <span class="lists_item_text text_size__sm lists_item_link text__dark">
                             REST API
                           </span>
@@ -1056,7 +331,7 @@
                     <ul class="sideBar_titles">
                       <li class="lists_item">
                         <a href="https://mui.com/" target="_blank" class="lists_item" rel="noopener noreferrer">
-                          <div class="icon_bg small_icon icon_bg__mui"></div>
+                          <img src="./mui.png" alt="mui icon" class="img_round img_sm" />
                           <span class="lists_item_text text_size__sm lists_item_link text__dark">
                             Material UI
                           </span>
@@ -1065,7 +340,7 @@
                       <li class="lists_item">
                         <a href="https://storybook.js.org/" target="_blank" class="lists_item"
                           rel="noopener noreferrer">
-                          <div class="icon_bg small_icon icon_bg__storybook"></div>
+                          <img src="./storybook.png" alt="storybook icon" class="img_round img_sm" />
                           <span class="lists_item_text text_size__sm lists_item_link text__dark">
                             Storybook
                           </span>
@@ -1079,7 +354,7 @@
                       <li class="lists_item">
                         <a href="https://www.figma.com/organization/" target="_blank" class="lists_item"
                           rel="noopener noreferrer">
-                          <div class="icon_bg small_icon icon_bg__figma"></div>
+                          <img src="./figma.png" alt="Figma icon" class="img_round img_sm" />
                           <span class="lists_item_text text_size__md lists_item_link text__dark">
                             Figma
                           </span>
@@ -1088,7 +363,7 @@
                       <li class="lists_item">
                         <a href="https://www.atlassian.com/software/jira" target="_blank" class="lists_item"
                           rel="noopener noreferrer">
-                          <div class="icon_bg small_icon icon_bg__jira"></div>
+                          <img src="./jira.png" alt="Jira icon" class="img_round img_sm" />
                           <span class="lists_item_text text_size__md lists_item_link text__dark">
                             Jira
                           </span>
@@ -1102,7 +377,7 @@
                       <li class="lists_item">
                         <a href="https://atomicdesign.bradfrost.com/chapter-2/" target="_blank" class="lists_item"
                           rel="noopener noreferrer">
-                          <div class="icon_bg small_icon icon_bg__adm"></div>
+                          <img src="./adm.png" alt="Atomic design icon" class="img_round img_sm" />
                           <span class="lists_item_text text_size__sm lists_item_link text__dark">
                             Atomic DM
                           </span>
@@ -1110,7 +385,7 @@
                       </li>
                       <li class="lists_item">
                         <a href="https://en.bem.info/" target="_blank" class="lists_item" rel="noopener noreferrer">
-                          <div class="icon_bg small_icon icon_bg__bem"></div>
+                          <img src="./bem.png" alt="BEM icon" class="img_round img_sm" />
                           <span class="lists_item_text text_size__md lists_item_link text__dark">
                             BEM
                           </span>
@@ -1123,7 +398,7 @@
                     <ul class="sideBar_titles">
                       <li class="lists_item">
                         <a href="https://git-scm.com/" target="_blank" class="lists_item" rel="noopener noreferrer">
-                          <div class="icon_bg small_icon icon_bg__git"></div>
+                          <img src="./git.png" alt="Git icon" class="img_round img_sm" />
                           <span class="lists_item_text text_size__sm lists_item_link text__dark">
                             Git
                           </span>
@@ -1131,7 +406,7 @@
                       </li>
                       <li class="lists_item">
                         <a href="https://www.npmjs.com/" target="_blank" class="lists_item" rel="noopener noreferrer">
-                          <div class="icon_bg small_icon icon_bg__npm"></div>
+                          <img src="./npm.png" alt="npm icon" class="img_round img_sm" />
                           <span class="lists_item_text text_size__sm lists_item_link text__dark">
                             npm
                           </span>
@@ -1139,7 +414,7 @@
                       </li>
                       <li class="lists_item">
                         <a href="https://yarnpkg.com/" target="_blank" class="lists_item" rel="noopener noreferrer">
-                          <div class="icon_bg small_icon icon_bg__yarn"></div>
+                          <img src="./yarn.png" alt="yarn icon" class="img_round img_sm" />
                           <span class="lists_item_text text_size__sm lists_item_link text__dark">
                             Yarn
                           </span>
@@ -1155,7 +430,7 @@
                 <div class="sideBar_titles__lightRightSide bg__light"></div>
                 <div class="sideBar_titles bg__dark">
                   <h2 class="titles text__light">Soft skills</h2>
-                  <div class="icon_bg large_icon icon_bg__softSkills"></div>
+                  <img src="./softSkills.png" alt="soft skills icon" class="img_round img_lg" />
                 </div>
               </div>
               <div class="sideBar_block sideBar_softSkills bg__light">
@@ -1204,7 +479,7 @@
                 <div class="sideBar_titles__lightRightSide bg__light"></div>
                 <div class="sideBar_titles bg__dark">
                   <h2 class="titles text__light">Languages</h2>
-                  <div class="icon_bg large_icon icon_bg__languages"></div>
+                  <img src="./languages.png" alt="languages icon" class="img_round img_lg" />
                 </div>
               </div>
               <div class="sideBar_block sideBar_languages bg__light">
@@ -1243,12 +518,13 @@
               </div>
 
             </aside>
+
             <div class="description_container bg__light">
               <section class="description description_about">
 
                 <article class="article">
                   <div class="article_title">
-                    <div class="icon_bg article_icon article_icon_summary"></div>
+                    <img src="./profile_icon.png" alt="profile icon" class="img_round article_img" />
                     <h2 class="article_title_text">Summary</h2>
                   </div>
                   <p class="article_text">
@@ -1269,7 +545,7 @@
 
                 <article class="article">
                   <div class="article_title">
-                    <div class="icon_bg article_icon article_icon_experience"></div>
+                    <img src="./experience.png" alt="experience icon" class="img_round article_img" />
                     <h2 class="article_title_text">Work Experience</h2>
                   </div>
                   <span>
@@ -1279,7 +555,7 @@
                       class="experience_link job_link text__dark">
                       <i>Recrd.</i>
                     </a>
-                    <span class="article_text"><i>Social community project</i></span>
+                    <span class="article_text"><i> - Social community project</i></span>
                   </span>
                   <br />
                   <br />
@@ -1290,22 +566,22 @@
                       class="experience_link job_link text__dark">
                       <i>HemoMedika</i>
                     </a>
-                    <span class="article_text"><i>Healthcare management system</i></span>
+                    <span class="article_text"><i> - Healthcare management system</i></span>
                   </span>
                   <br />
                   <br />
-                  <h3 class="article_text text__dark">Responsibilities:</h3>
+                  <h3 class="article_text">Responsibilities:</h3>
                   <ul>
-                    <li class="article_text text__dark">
+                    <li class="article_text">
                       - Implement UI and business logic from scratch by applying the best development practices.
                     </li>
-                    <li class="article_text text__dark">
+                    <li class="article_text">
                       - Implement software components according to the customer specifications.
                     </li>
-                    <li class="article_text text__dark">
+                    <li class="article_text">
                       - Independently handle project activities related to builds and deployments.
                     </li>
-                    <li class="article_text text__dark">
+                    <li class="article_text">
                       - Refactored the existing code to improve performance.
                     </li>
                   </ul>
@@ -1313,7 +589,7 @@
 
                 <article class="article">
                   <div class="article_title">
-                    <div class="icon_bg article_icon article_icon_education"></div>
+                    <img src="./education.png" alt="Education icon" class="img_round article_img" />
                     <h2 class="article_title_text">Education</h2>
                   </div>
                   <span>
@@ -1323,12 +599,661 @@
                 </article>
               </section>
             </div>
+
           </div>
         </div>
       </div>
     </div>
   </main>
 </body>
+
+<style>
+  .main {
+    position: relative;
+    width: 100vw;
+    min-height: 100vh;
+    font-size: 1.4rem;
+    overflow: hidden;
+    background: radial-gradient(circle, rgba(37, 48, 166, 1) 0%, rgba(91, 58, 197, 0.5) 50%, rgba(37, 48, 166, 0) 100%);
+  }
+
+  .box_container {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 100vw;
+    height: 100vh;
+    opacity: 0.5;
+  }
+
+  .bg_image {
+    position: absolute;
+    width: 50%;
+    height: 50%;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+  }
+
+  .top__left {
+    top: -10%;
+    left: -10%;
+    z-index: 3;
+    background-image: url(./workingLaptop2.png);
+    transform: rotateZ(315deg);
+  }
+
+  .top__right {
+    top: -10%;
+    right: -10%;
+    z-index: 4;
+    background-image: url(./workingLaptop.png);
+    transform: rotateZ(15deg);
+  }
+
+  .middle__left {
+    top: 40%;
+    left: -15%;
+    z-index: 2;
+    background-image: url(./photo1.png);
+  }
+
+  .middle__right {
+    top: 25%;
+    right: -5%;
+    background-image: url(./shopping.png);
+  }
+
+  .bottom__right {
+    bottom: -15%;
+    right: -10%;
+    z-index: 4;
+    background-image: url(./buying.png);
+    transform: rotateZ(10deg);
+  }
+
+  .portfolio_container {
+    padding: 2.4rem 4rem;
+    background: transparent;
+    z-index: 10;
+    overflow-x: hidden;
+    overflow-y: auto;
+    opacity: 1;
+  }
+
+  .portfolio_wrapper {
+    margin: 0 auto;
+    padding: 1rem;
+    width: 900px;
+    background-color: rgb(112, 113, 116);
+  }
+
+  .bg__light {
+    background-color: var(--color-light);
+  }
+
+  .bg__dark {
+    background-color: var(--color-dark);
+  }
+
+  .portfolio {
+    padding: 4rem 0 0 4rem;
+    width: 100%;
+    box-shadow: 0 0 1rem rgba(256, 256, 256, 0.8);
+  }
+
+  .portfolio_info {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    min-height: 76.2rem;
+  }
+
+  .bg_box {
+    position: absolute;
+    top: calc(var(--avatar-container-size) / 2 + 0.5rem);
+    right: 0;
+    width: calc(100% - var(--avatar-container-size) / 2);
+    height: calc(var(--avatar-container-size) / 2);
+  }
+
+  .profile {
+    position: relative;
+    display: flex;
+    justify-content: center;
+  }
+
+  .avatar_container {
+    position: relative;
+    min-width: var(--avatar-container-size);
+    width: var(--avatar-container-size);
+    height: var(--avatar-container-size);
+    z-index: 2;
+  }
+
+  .avatar_wrapper {
+    padding: 0 1.6rem 1.6rem 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 0 0 50% 0;
+  }
+
+  .avatar_bg {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    background-color: rgb(160, 142, 93);
+    box-shadow: 0.8rem 0 0.8rem rgb(0, 0, 0);
+  }
+
+  .avatar {
+    width: 90%;
+    height: 90%;
+    border-radius: 50%;
+    box-shadow: 0.6rem 0 0.6rem rgb(0, 0, 0);
+  }
+
+  .nav_block {
+    display: flex;
+    padding: 1rem 0 0 3rem;
+    width: 100%;
+    height: 8rem;
+    border-radius: 6rem 0 0 2rem;
+  }
+
+  .pdf_download_btn {
+    width: 6rem;
+    height: 6rem;
+    min-width: 6rem;
+  }
+
+  .nav_list {
+    display: none;
+    align-items: center;
+    justify-content: center;
+    gap: 2.4rem;
+    width: 100%;
+    height: 100%;
+  }
+
+  .sideBar {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-width: var(--avatar-container-size);
+    width: var(--avatar-container-size);
+  }
+
+  .sideBar_block {
+    display: flex;
+    padding: 0.8rem;
+    width: 100%;
+    border-radius: 2rem 0 0 2rem;
+  }
+
+  .sideBar_titles_wrapper {
+    position: relative;
+    min-width: var(--avatar-container-size);
+    width: var(--avatar-container-size);
+    height: 4rem;
+  }
+
+  .sideBar_titles__lightRightSide {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    width: 50%;
+  }
+
+  .sideBar_titles {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1.2rem;
+    padding: 0 0.5rem;
+    width: 100%;
+    height: 100%;
+    border-radius: 2rem;
+  }
+
+  .sideBar_contacts {
+    height: 16rem;
+  }
+
+  .sideBar_techSkills {
+    height: 20rem;
+  }
+
+  .sideBar_softSkills {
+    height: 16rem;
+  }
+
+  .sideBar_languages {
+    height: 8.2rem;
+    border-radius: 2rem 0 0 0;
+  }
+
+  .img_round {
+    border-radius: 50%;
+  }
+
+  .img_sm {
+    width: 2rem;
+    height: 2rem;
+    min-width: 2rem;
+  }
+
+  .img_lg {
+    width: 3rem;
+    height: 3rem;
+    min-width: 3rem;
+  }
+
+  .description_container {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+  }
+
+  .main_title_decorate {
+    color: rgb(160, 142, 93);
+  }
+
+  .black_circle {
+    position: absolute;
+    bottom: -0.8rem;
+    width: 1.2rem;
+    height: 1.2rem;
+    border-radius: 50%;
+    background-color: #000;
+  }
+
+  .black_circle__left {
+    left: 0;
+  }
+
+  .black_circle__right {
+    right: 0;
+  }
+
+  .jobPosition_title {
+    width: 100%;
+    font-size: 2.6rem;
+    font-weight: 700;
+    line-height: 5rem;
+    text-align: center;
+    letter-spacing: 0.2rem;
+  }
+
+  .job_link:hover {
+    border-bottom: 0.2rem solid var(--color-dark);
+  }
+
+  .lists {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    gap: 0.6rem;
+    width: 100%;
+    height: 100%;
+  }
+
+  .lists_item {
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+    width: 100%;
+    height: max-content;
+  }
+
+  .lists_item_text {
+    display: flex;
+    align-items: center;
+    width: max-content;
+    text-align: center;
+    word-break: break-all;
+  }
+
+  .lists_item_language {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 0.8rem;
+    width: max-content;
+    text-align: center;
+  }
+
+  .text_size__lg {
+    font-size: 1.6rem;
+    line-height: 1.8rem;
+  }
+
+  .lists_item_link {
+    border-bottom: 0.1rem solid var(--color-light);
+  }
+
+  .lists_item_link:hover {
+    border-bottom: 0.1rem solid var(--color-dark);
+  }
+
+  .description {
+    position: absolute;
+    top: -8rem;
+    width: 100%;
+    height: calc(100% + 8rem);
+    overflow-y: auto;
+  }
+
+  .description_about {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  .top_left_radius {
+    border-radius: 70px 0 0 0;
+  }
+
+  .rating_circle {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 4.4rem;
+    height: 4.4rem;
+    border-radius: 50%;
+    background-color: var(--color-dark);
+    overflow: hidden;
+    z-index: 2;
+  }
+
+  .rating_circle_border {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    border: 0.4rem solid rgb(160, 142, 93);
+  }
+
+  .rating_circle_border__50 {
+    border-bottom-color: transparent;
+    border-left-color: transparent;
+    transform: rotate(45deg);
+    z-index: 1;
+
+  }
+
+  .rating_circle_border__rotate65deg {
+    border-bottom-color: transparent;
+    border-left-color: transparent;
+    transform: rotate(65deg);
+    z-index: 3;
+  }
+
+  .rating_circle_border__rotate215deg {
+    border-bottom-color: transparent;
+    border-left-color: transparent;
+    transform: rotate(215deg);
+    z-index: 3;
+  }
+
+  .box_rounded_corners {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: var(--avatar-container-size);
+    height: 4rem;
+    text-align: center;
+    border-radius: 2rem;
+    background-color: var(--color-dark);
+  }
+
+  .button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: var(--avatar-container-size);
+    height: 4rem;
+    border-radius: 2rem;
+  }
+
+  .button__active {
+    color: var(--color-light);
+    background-color: var(--color-dark);
+  }
+
+  .button__passive {
+    color: var(--color-dark);
+    background-color: transparent;
+    border: 0.2rem solid var(--color-dark);
+  }
+
+  .button:hover {
+    box-shadow: 0 0 1rem var(--color-dark);
+  }
+
+  .sideBar__visibleOnSmallDevices {
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-width: calc(var(--avatar-container-size) * 2);
+    width: calc(var(--avatar-container-size) * 2);
+    background-color: var(--color-dark);
+    box-shadow: 1rem 1.2rem 1.4rem var(--color-dark);
+    z-index: 10;
+  }
+
+  .article {
+    margin-bottom: 2.4rem;
+    padding: 0 4rem;
+  }
+
+  .article:last-child {
+    margin-bottom: 1rem;
+  }
+
+  .article_img {
+    margin-right: 2rem;
+    width: 4rem;
+    height: 4rem;
+    min-width: 4rem;
+  }
+
+  @media only screen and (max-width: 980px) {
+    .portfolio_wrapper {
+      width: 100%;
+    }
+
+    .portfolio_bg {
+      padding: 2.4rem 0 0 2.4rem;
+    }
+
+    .main_title {
+      font-size: 3.2rem;
+      line-height: 4rem;
+      letter-spacing: 0.2rem;
+      border-bottom: 0.3rem solid #000;
+    }
+
+    .black_circle {
+      bottom: -0.5rem;
+      width: 0.8rem;
+      height: 0.8rem;
+    }
+
+    .jobPosition_title {
+      font-size: 2.2rem;
+      font-weight: 700;
+      line-height: 5rem;
+      letter-spacing: 0.2rem;
+    }
+
+    .article {
+      margin-bottom: 2rem;
+      padding: 0 2.6rem;
+    }
+
+    .article_title_text {
+      font-size: 3rem;
+    }
+  }
+
+  @media only screen and (max-width: 750px) {
+    :root {
+      --avatar-container-size: 12rem;
+    }
+
+    .portfolio_container {
+      padding: 1.6rem;
+    }
+
+    .portfolio {
+      padding: 1.6rem 0 0 1.6rem;
+    }
+
+    .jobPosition_title {
+      font-size: 2rem;
+      font-weight: 700;
+      line-height: 3.2rem;
+      letter-spacing: 0.2rem;
+    }
+
+    .top_left_radius {
+      border-radius: 40px 0 0 0;
+    }
+
+    .nav_block {
+      align-items: center;
+      padding-left: 1rem;
+      height: 6rem;
+      border-radius: 3.2rem 0 0 0;
+    }
+
+    .nav_list {
+      display: flex;
+    }
+
+    .pdf_download_btn {
+      width: 4rem;
+      height: 4rem;
+      min-width: 4rem;
+    }
+
+    .description {
+      position: relative;
+      top: 0;
+      width: 100%;
+      height: 100%;
+    }
+
+    .sideBar {
+      display: none;
+    }
+
+    .sideBar_titles_wrapper {
+      position: relative;
+      min-width: calc(var(--avatar-container-size) * 2);
+      width: calc(var(--avatar-container-size) * 2);
+    }
+
+    .titles {
+      font-size: 1.8rem;
+    }
+
+    .article {
+      margin-bottom: 2rem;
+      padding: 0 2rem;
+    }
+
+    .article_title_text {
+      font-size: 2.4rem;
+    }
+
+    .article_icon {
+      min-width: 3.2rem;
+      min-height: 3.2rem;
+    }
+
+  }
+
+  @media only screen and (max-width: 600px) {
+    .main_title {
+      font-size: 3rem;
+    }
+  }
+
+  @media only screen and (max-width: 544px) {
+    .bg_image {
+      width: 100%;
+    }
+
+    .main_title {
+      font-size: 1.8rem;
+      line-height: 3rem;
+      font-weight: 700;
+      border-bottom: 0.2rem solid #000;
+    }
+
+    .black_circle {
+      bottom: -0.4rem;
+      width: 0.6rem;
+      height: 0.6rem;
+    }
+
+    .jobPosition_title {
+      font-size: 1.4rem;
+      font-weight: 600;
+      line-height: 3rem;
+      letter-spacing: 0;
+    }
+  }
+
+  @media only screen and (max-width: 440px) {
+    .portfolio_container {
+      padding: 0.8rem;
+    }
+
+    .main_title {
+      font-size: 1.2rem;
+      line-height: 2rem;
+      font-weight: 700;
+      padding: 0 0.8rem 1% 0.8rem;
+    }
+
+    .jobPosition_title {
+      font-size: 1rem;
+      font-weight: 400;
+      line-height: 3rem;
+      letter-spacing: 0;
+    }
+  }
+
+  @media only screen and (max-width: 360px) {
+    .profile {
+      overflow: hidden;
+    }
+  }
+</style>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js "></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
 
 <script>
   'use strict'
@@ -1337,6 +1262,7 @@
   const btnMainInfo = document.getElementById('btn_mainInfo');
   const sideBar = document.getElementById('sideBar');
   const toggle = document.getElementById('toggle');
+  const pdfDownload = document.getElementById('pdf_download');
 
   function doBtnActive(element)
   {
@@ -1393,6 +1319,27 @@
       isBigDevise = true;
     }
   });
+
+  window.jsPDF = window.jspdf.jsPDF;
+  const docPDF = new jsPDF();
+  const print = () =>
+  {
+    const elementHTML = document.getElementById("printable");
+    elementHTML.style.marginLeft = '0';
+    docPDF.html(elementHTML, {
+      callback: (docPDF) =>
+      {
+        docPDF.save('CV_Krasnoshchokov.pdf');
+      },
+      x: 0,
+      y: 10,
+      width: 210,
+      windowWidth: 900,
+    });
+    elementHTML.style.marginLeft = 'auto';
+  }
+  pdf_download.addEventListener('click', print);
+
 </script>
 
 </html>

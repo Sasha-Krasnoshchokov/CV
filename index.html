@@ -175,9 +175,9 @@
           </div>
 
           <nav class="nav_block bg__light">
-            <button id="pdf_download" type="button" class="pdf_download_btn">
+            <!-- <button id="pdf_download" type="button" class="pdf_download_btn">
               <img src="./pdf_download.png" alt="pdf" class="img_round pdf_download_btn">
-            </button>
+            </button> -->
             <ul id="toggle" class="nav_list">
               <li>
                 <button id="btn_description" class="button button__active button_text text_size__md" type="button">
@@ -530,9 +530,9 @@
                     <h2 class="article_title_text">Summary</h2>
                   </div>
                   <p class="article_text">
-                    &nbsp; &nbsp;I have ~2 years of commercial experience in software services companies.
+                    &nbsp; &nbsp;I have ~3 years of commercial experience in software services companies.
                     Worked on projects: e-commerce, healthcare management system, social community.
-                    I created semantic, cross-browser, adaptive and UX apps based on Figma design,
+                    I created responsive, cross-browser, adaptive and UX apps based on Figma design,
                     refactored the existing code.
                     <br />
                     &nbsp; &nbsp;I have good knowledge of JS / TS, HTML5, CSS3. Experience with React/Redux/NextJS,
@@ -551,8 +551,19 @@
                     <h2 class="article_title_text">Work Experience</h2>
                   </div>
                   <span>
-                    <span class="article_text">/ 05.2022 - 03.2023 /</span>
-                    <br />
+                    <a href="https://vercel.live/link/sport-ebon.vercel.app?via=overview-project-list" target="_blank"
+                      rel="noreferrer" class="experience_link job_link text__dark">
+                      <i>Soccer</i>
+                    </a>
+                    <span class="article_text">
+                      - The home page of the sport app (not yet in production)
+                    </span>
+                  </span>
+                  <br />
+                  <br />
+                  <span>
+                    <!-- <span class="article_text">/ 05.2022 - 03.2023 /</span> -->
+                    <!-- <br /> -->
                     <a href="https://www.recrd.com/" target="_blank" rel="noreferrer"
                       class="experience_link job_link text__dark">
                       <i>Recrd.</i>
@@ -562,8 +573,8 @@
                   <br />
                   <br />
                   <span>
-                    <span class="article_text">/ 07.2021 - 03.2022 /</span>
-                    <br />
+                    <!-- <span class="article_text">/ 07.2021 - 03.2022 /</span> -->
+                    <!-- <br /> -->
                     <a href="https://hemomedika.com.ua/" target="_blank" rel="noreferrer"
                       class="experience_link job_link text__dark">
                       <i>HemoMedika</i>
@@ -687,7 +698,7 @@
   .portfolio_wrapper {
     margin: 0 auto;
     padding: 1rem;
-    width: 900px;
+    width: 920px;
     background-color: rgb(112, 113, 116);
   }
 
@@ -724,7 +735,7 @@
   .profile {
     position: relative;
     display: flex;
-    justify-content: center;
+    justify-content: flex-start;
   }
 
   .avatar_container {
@@ -868,6 +879,7 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    flex-grow: 1;
     width: 100%;
   }
 
@@ -1350,7 +1362,7 @@
       x: 0,
       y: 10,
       width: 210,
-      windowWidth: 900,
+      windowWidth: 920,
     });
     elementHTML.style.marginLeft = 'auto';
   }
